@@ -92,7 +92,7 @@ img {
 }
 #header div ul li.selected a {
 	background-color: #000000;
-	color: #f0bb00;
+	color: #f6d452;
 }
 #header div ul li.menu {
 	position: relative;
@@ -499,7 +499,7 @@ img {
 	width: 310px;
 }
 #body.home .footer div ul li ul li a.more {
-	background-color: #f0bb00;
+	background-color: #002b49;
 	color: #ffffff;
 	display: block;
 	float: right;
@@ -515,7 +515,7 @@ img {
 	width: 120px;
 }
 #body.home .footer div ul li ul li a.more:hover {
-	background-color: #002b49;
+	background-color: #333e48;
 }
 /*----------------------------------------body-styles---------------------------------------*/
 #body.about .header {
@@ -532,7 +532,7 @@ img {
 	padding: 65px 0 40px;
 }
 #body.about .header div h1, #body .header div h1 {
-	color: #FFFFFF;
+	color: #f6d452;
 	display: block;
 	font-family: audiowide-regular-webfont;
 	font-size: 36px;
