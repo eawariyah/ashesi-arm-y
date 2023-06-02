@@ -1,4 +1,4 @@
-/* Website template by freewebsitetemplates.com */
+/* Update */
 body {
   margin: 0;
   padding: 0;
@@ -172,15 +172,7 @@ img {
   padding: 0;
   width: 100%;
 }
-/* Original index */
 
-/* #body.home .header div {
-  margin: 0 auto;
-  max-width: 940px;
-  overflow: hidden;
-  padding: 0 10px;
-  position: relative;
-} */
 #body.home .header div {
   margin: 0 auto;
   max-width: 940px;
@@ -225,25 +217,6 @@ img {
   z-index: 60;
 }
 
-/* Original */
-
-/* #body.home .header div h2 {
-  color: #ffffff;
-  display: block;
-  float: right;
-  font-family: Arial;
-  font-size: 43px;
-  font-weight: normal;
-  line-height: 43px;
-  margin: 0 0 36px;
-  padding: 0 146px 0 506px;
-  position: relative;
-  text-align: right;
-  text-transform: uppercase;
-  width: 288px;
-  z-index: 60;
-} */
-
 #body.home .header div h2 {
   color: #00bbd8;
   font-family: "audiowide-regular-webfont";
@@ -278,27 +251,6 @@ img {
   width: 738px;
   z-index: 100;
 }
-
-/* Original */
-/* #body.home .header div a.more {
-  background-color: #ffc700;
-  color: #333e48;
-  display: block;
-  float: right;
-  font-family: Arial;
-  font-size: 18px;
-  font-weight: normal;
-  height: 49px;
-  line-height: 49px;
-  margin: 0 200px 0 0;
-  padding: 0;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-  width: 180px;
-  z-index: 55;
-  border-radius: 5px;
-} */
 
 #body.home .header div a.more {
   background-color: #ffc700;
