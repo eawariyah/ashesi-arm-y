@@ -88,6 +88,18 @@
     position: relative;
     z-index: 100;
   }
+
+  #body.home .header div img.satellite {
+    display: block;
+    left: 10px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -117px;
+    width: auto;
+    z-index: 50;
+  }
+
   #body.home .header div img.satellite {
     left: 2px;
   }
