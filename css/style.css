@@ -67,12 +67,15 @@ img {
   padding: 0;
   width: auto;
 }
+
 #header div ul li {
   float: left;
   margin: 0;
   padding: 0;
   width: auto;
+  /* border-bottom: 1px solid white; Added bottom border */
 }
+
 #header div ul li a {
   color: #21b7de;
   display: block;
@@ -87,19 +90,26 @@ img {
   text-align: center;
   text-transform: uppercase;
   width: auto;
+  /* border-bottom: 1px solid white; Added bottom border */
 }
 
 #header div ul li a:hover {
   background-color: #002b49;
   color: #ffffff;
+  border-top: 1px solid #f0bb00; /* Added bottom border */
+  z-index: 100;
 }
+
 #header div ul li.selected a {
   /* background-color: #000000; */
   color: #ffffff;
 }
+
 #header div ul li.menu {
   position: relative;
+  /* border-bottom: 1px solid white; Added bottom border */
 }
+
 #header div ul li.menu ul {
   display: block;
   left: -99999px;
@@ -111,23 +121,30 @@ img {
   width: 142px;
   z-index: 50;
 }
+
 #header div ul li.menu:hover ul.primary {
   left: 31px;
 }
+
 #header div ul li.menu ul.primary.selected {
   left: 31px;
 }
+
 #header div ul li.menu:hover ul.secondary {
   left: -20px;
 }
+
 #header div ul li.menu ul.secondary.selected {
   left: -20px;
 }
+
 #header div ul li.menu ul li {
   margin: 0;
   padding: 0;
   width: auto;
+  /* border-bottom: 1px solid white; Added bottom border */
 }
+
 #header div ul li.menu ul li a {
   background-color: #002b49;
   color: #ffffff;
@@ -143,6 +160,7 @@ img {
   text-transform: uppercase;
   width: auto;
 }
+
 #header div ul li.menu ul.primary.selected li a,
 #header div ul li.menu ul.secondary.selected li a {
   background-color: #000000;
