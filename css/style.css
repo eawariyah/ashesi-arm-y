@@ -41,7 +41,7 @@ img {
 }
 #header div {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: 1086px;
   min-height: 60px;
   padding: 0 10px;
 }
@@ -176,7 +176,7 @@ img {
 #body.home .header div {
   margin: 0 auto;
   max-width: 940px;
-  overflow: hidden;
+  overflow: visible; /* Change 'hidden' to 'visible' */
   padding: 0 10px;
   position: relative;
 }
@@ -188,8 +188,18 @@ img {
   position: absolute;
   top: 41px;
   width: auto;
-  z-index: 50;
+  z-index: 101;
+  perspective: 800px; /* Adjust the value as per your preference */
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
+#body.home .header div img.satellite:hover {
+  transform: rotateX(10deg) rotateY(-10deg);
+}
+#body.home .header div img.satellite.active {
+  transform: perspective(1000px) rotateX(30deg) rotateY(-30deg);
+}
+
 #body.home .header div img.down_arrow {
   display: block;
   left: 535px;
