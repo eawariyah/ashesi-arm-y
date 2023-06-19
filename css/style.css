@@ -596,6 +596,55 @@ img {
   overflow: hidden;
   padding: 65px 0 40px;
 }
+
+#body.about .header .team-member1 div,
+#body .header .team-member1 div {
+  margin-left: 9%;
+  max-width: 960px;
+  overflow: hidden;
+  padding: 65px 0 40px;
+  display: inline-block;
+  text-align: center;
+  /* margin: 20px; */
+  padding: 20px;
+  border: 2px solid #414141;
+  border-radius: 10px;
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 65px;
+  padding-right: 0px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  max-width: 90%;
+}
+
+/* #body.about .header .team-member1 div,
+#body .header .team-member1 img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  object-position: center;
+} */
+
+#body.about .header .team-member1 div,
+#body .header .team-member1 h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+#body.about .header .team-member1 div,
+#body .header .team-member1 p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#body.about .header .team-member1 div,
+#body .header .team-member1 strong {
+  font-weight: bold;
+}
+
 #body.about .header div h1,
 #body .header div h1 {
   color: #f6d452;

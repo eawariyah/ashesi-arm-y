@@ -31,6 +31,21 @@
     position: relative;
     width: 95%;
   }
+  #body.about .header .team-member1 div,
+  #body .header .team-member1 div {
+    @media only screen and (max-width: 600px) {
+      /* .team-member { */
+      width: 88%;
+      margin: 20px auto;
+      padding: 20px;
+      /* } */
+
+      .team-member img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
 
   #body.home .header div h1 {
     color: #ffffff;
