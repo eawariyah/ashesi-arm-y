@@ -1,8 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign Up</title>
+    <title>Sign In</title>
     <link rel="stylesheet" type="text/css" href="css/style1.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
+        authDomain: "ashesi-arm-y.firebaseapp.com",
+        projectId: "ashesi-arm-y",
+        storageBucket: "ashesi-arm-y.appspot.com",
+        messagingSenderId: "1069096083638",
+        appId: "1:1069096083638:web:617337365051f947600617",
+        measurementId: "G-F40BZM1WQ9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      const db = firebase.firestore();
+
+      // Function to handle form submission
+      function signIn(event) {
+        event.preventDefault();
+
+        // Get form values
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Query Firestore for the user with the given email and password
+        db.collection("users")
+          .where("email", "==", email)
+          .where("password", "==", password)
+          .get()
+          .then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+              // Redirect to index.html if the user is found
+              window.location.href = "index.html";
+            } else {
+              // Show an error message if the user is not found or the credentials don't match
+              alert("Invalid email or password. Please try again.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error querying Firestore: ", error);
+          });
+      }
+    </script>
   </head>
   <body
     style="
@@ -13,7 +58,7 @@
     "
   >
     <div class="container">
-      <form class="signup-form" action="index.html" method="POST">
+      <form class="signup-form" onsubmit="signIn(event)">
         <img src="images/tentative.png" style="padding-left: 15%" />
         <h1>Sign in</h1>
         <div class="form-group">
