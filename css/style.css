@@ -175,6 +175,7 @@ img {
   padding: 0;
   width: 100%;
 }
+
 #body.home {
   background: none;
   margin: 0;
@@ -595,6 +596,14 @@ img {
   max-width: 960px;
   overflow: hidden;
   padding: 65px 0 40px;
+}
+
+#body.about .header .gallery div,
+#body .header .gallery div {
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: hidden;
+  /* padding: 65px 0 40px; */
 }
 
 #body.about .header .team-member1 div,
