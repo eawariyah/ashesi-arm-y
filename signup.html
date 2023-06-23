@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
+        authDomain: "ashesi-arm-y.firebaseapp.com",
+        projectId: "ashesi-arm-y",
+        storageBucket: "ashesi-arm-y.appspot.com",
+        messagingSenderId: "1069096083638",
+        appId: "1:1069096083638:web:617337365051f947600617",
+        measurementId: "G-F40BZM1WQ9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      const db = firebase.firestore();
+
+      // Function to handle form submission
+      // Function to handle form submission
+      function signUp(event) {
+        event.preventDefault();
+
+        // Get form values
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const major = document.getElementById("major").value;
+        const yearGroup = document.getElementById("yearGroup").value;
+        const gender = document.getElementById("gender").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        const pin = document.getElementById("pin").value;
+        const merch = document.getElementById("merch").checked;
+
+        // Check if the pin is correct
+        if (pin !== "4492") {
+          alert("Incorrect pin. Please enter the correct pin.");
+          return;
+        }
+
+        // Check if the password and confirm password match
+        if (password !== confirmPassword) {
+          alert("Password and Confirm Password must match.");
+          return;
+        }
+
+        // Create a user object
+        const user = {
+          username,
+          email,
+          major,
+          yearGroup,
+          gender,
+          phone,
+          password,
+          pin,
+          merch,
+        };
+
+        // Save user details to Firestore
+        db.collection("users")
+          .add(user)
+          .then(() => {
+            // Redirect to signin.html after successful signup
+            window.location.href = "signin.html";
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="signup-form" onsubmit="signUp(event)">
+        <h1>Sign Up</h1>
+        <div class="form-group">
+          <label for="username">Full Name:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Ashesi Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="major">Major:</label>
+          <input type="text" id="major" name="major" required />
+        </div>
+        <div class="form-group">
+          <label for="yearGroup">Year group (2024 - 2026):</label>
+          <input type="text" id="yearGroup" name="yearGroup" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <input type="text" id="gender" name="gender" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <br />
+          <div class="form-group">
+            <label for="pin">Pin:</label>
+            <input type="number" id="pin" name="pin" required />
+          </div>
+          <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
+          <input type="checkbox" id="merch" name="merch" required />
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </body>
+</html>
