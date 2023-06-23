@@ -1,0 +1,59 @@
+/* Form Page */
+body {
+  /* background: url("../images/Generated2.png") no-repeat scroll center top */
+  /* #000000; */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+.container {
+  width: 400px;
+  margin: 100px auto;
+  padding: 60px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: audiowide-regular-webfont;
+  /* color: white; */
+  background-color: rgb(0, 0, 0, 0.9);
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  /* font-weight: bold; */
+  /* font-family: audiowide-regular-webfont; */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #002b49;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: audiowide-regular-webfont;
+}
+
+button:hover {
+  background-color: #333e48;
+}
