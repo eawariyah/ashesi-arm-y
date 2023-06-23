@@ -1,9 +1,9 @@
 /* Form Page */
 body {
-  background: url("../images/Generated2.png") no-repeat scroll center top
-    #000000;
-  background-size: cover;
-  background-position: center;
+  /* background: url("../images/Generated2.png") no-repeat scroll center top */
+  /* #000000; */
+  /* background-size: cover; */
+  /* background-position: center; */
 }
 .container {
   width: 400px;

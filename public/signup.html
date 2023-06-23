@@ -22,6 +22,7 @@
       const db = firebase.firestore();
 
       // Function to handle form submission
+      // Function to handle form submission
       function signUp(event) {
         event.preventDefault();
 
@@ -33,8 +34,22 @@
         const gender = document.getElementById("gender").value;
         const phone = document.getElementById("phone").value;
         const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
         const pin = document.getElementById("pin").value;
         const merch = document.getElementById("merch").checked;
+
+        // Check if the pin is correct
+        if (pin !== "4492") {
+          alert("Incorrect pin. Please enter the correct pin.");
+          return;
+        }
+
+        // Check if the password and confirm password match
+        if (password !== confirmPassword) {
+          alert("Password and Confirm Password must match.");
+          return;
+        }
 
         // Create a user object
         const user = {

@@ -1,83 +1,48 @@
-[debug] [2023-06-22T20:49:28.719Z] ----------------------------------------------------------------------
-[debug] [2023-06-22T20:49:28.721Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Edwin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2023-06-22T20:49:28.722Z] CLI Version:   11.25.3
-[debug] [2023-06-22T20:49:28.722Z] Platform:      win32
-[debug] [2023-06-22T20:49:28.722Z] Node Version:  v14.20.0
-[debug] [2023-06-22T20:49:28.723Z] Time:          Thu Jun 22 2023 20:49:28 GMT+0000 (Coordinated Universal Time)
-[debug] [2023-06-22T20:49:28.723Z] ----------------------------------------------------------------------
+[debug] [2023-06-23T01:35:12.256Z] ----------------------------------------------------------------------
+[debug] [2023-06-23T01:35:12.260Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Edwin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-06-23T01:35:12.260Z] CLI Version:   11.25.3
+[debug] [2023-06-23T01:35:12.260Z] Platform:      win32
+[debug] [2023-06-23T01:35:12.260Z] Node Version:  v14.20.0
+[debug] [2023-06-23T01:35:12.261Z] Time:          Fri Jun 23 2023 01:35:12 GMT+0000 (Coordinated Universal Time)
+[debug] [2023-06-23T01:35:12.261Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-06-22T20:49:28.730Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-06-22T20:49:28.730Z] > authorizing via signed-in user (eawariyah.ea@gmail.com)
+[debug] [2023-06-23T01:35:12.358Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-23T01:35:12.358Z] > authorizing via signed-in user (eawariyah.ea@gmail.com)
+[debug] [2023-06-23T01:35:12.358Z] [iam] checking project ashesi-arm-y for permissions ["firebase.projects.get"]
+[debug] [2023-06-23T01:35:12.360Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ashesi-arm-y:testIamPermissions [none]
+[debug] [2023-06-23T01:35:12.360Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ashesi-arm-y:testIamPermissions x-goog-quota-user=projects/ashesi-arm-y
+[debug] [2023-06-23T01:35:12.360Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ashesi-arm-y:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-23T01:35:13.699Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ashesi-arm-y:testIamPermissions 200
+[debug] [2023-06-23T01:35:13.700Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ashesi-arm-y:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-23T01:35:13.701Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y [none]
+[debug] [2023-06-23T01:35:14.293Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y 200
+[debug] [2023-06-23T01:35:14.293Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y {"projectId":"ashesi-arm-y","projectNumber":"1069096083638","displayName":"ashesi-arm-y","name":"projects/ashesi-arm-y","resources":{"hostingSite":"ashesi-arm-y","realtimeDatabaseInstance":"ashesi-arm-y-default-rtdb"},"state":"ACTIVE","etag":"1_49a119af-69bc-45ae-b7d3-c5effc8402d3"}
 [info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
-
-You're about to initialize a Firebase project in this directory:
-
-  F:\Papers and School\ashesi-arm-y
-
+[info] === Serving from 'F:\Papers and School\ashesi-arm-y'...
 [info] 
-=== Project Setup
-[info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[debug] [2023-06-22T20:53:02.534Z] > refreshing access token with scopes: []
-[debug] [2023-06-22T20:53:02.536Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-06-22T20:53:02.536Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-06-22T20:53:03.118Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2023-06-22T20:53:03.118Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-06-22T20:53:03.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
-[debug] [2023-06-22T20:53:04.241Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
-[debug] [2023-06-22T20:53:04.242Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
-[info] i  Using project ashesi-arm-y (ashesi-arm-y) 
-[info] 
-=== Database Setup
-[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
-[debug] [2023-06-22T20:53:09.384Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com [none]
-[debug] [2023-06-22T20:53:09.385Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/ashesi-arm-y
-[debug] [2023-06-22T20:53:10.719Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com 200
-[debug] [2023-06-22T20:53:10.720Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com [omitted]
-[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
-[debug] [2023-06-22T20:53:10.722Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com:enable [none]
-[debug] [2023-06-22T20:53:10.722Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/ashesi-arm-y
-[debug] [2023-06-22T20:53:12.496Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com:enable 200
-[debug] [2023-06-22T20:53:12.497Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com:enable [omitted]
-[debug] [2023-06-22T20:53:22.502Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com [none]
-[debug] [2023-06-22T20:53:22.503Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/ashesi-arm-y
-[debug] [2023-06-22T20:53:23.685Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com 200
-[debug] [2023-06-22T20:53:23.685Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ashesi-arm-y/services/firebasedatabase.googleapis.com [omitted]
-[info] +  database: required API firebasedatabase.googleapis.com is enabled 
-[info] 
-[debug] [2023-06-22T20:53:23.694Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y [none]
-[debug] [2023-06-22T20:53:24.311Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y 200
-[debug] [2023-06-22T20:53:24.311Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y {"projectId":"ashesi-arm-y","projectNumber":"1069096083638","displayName":"ashesi-arm-y","name":"projects/ashesi-arm-y","resources":{"hostingSite":"ashesi-arm-y"},"state":"ACTIVE","etag":"1_49a119af-69bc-45ae-b7d3-c5effc8402d3"}
-[debug] [2023-06-22T20:53:35.197Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances databaseId=ashesi-arm-y-default-rtdb&validateOnly=true
-[debug] [2023-06-22T20:53:35.197Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances {"type":"default_database"}
-[debug] [2023-06-22T20:53:36.311Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances 200
-[debug] [2023-06-22T20:53:36.311Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances {"name":"projects/1069096083638/locations/us-central1/instances/ashesi-arm-y-default-rtdb","project":"projects/1069096083638","databaseUrl":"https://ashesi-arm-y-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
-[debug] [2023-06-22T20:53:36.314Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances databaseId=ashesi-arm-y-default-rtdb
-[debug] [2023-06-22T20:53:36.314Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances {"type":"default_database"}
-[debug] [2023-06-22T20:53:37.831Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances 200
-[debug] [2023-06-22T20:53:37.832Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/ashesi-arm-y/locations/us-central1/instances {"name":"projects/1069096083638/locations/us-central1/instances/ashesi-arm-y-default-rtdb","project":"projects/1069096083638","databaseUrl":"https://ashesi-arm-y-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
-[info] 
-[info] Firebase Realtime Database Security Rules allow you to define how your data should be
-[info] structured and when your data can be read from and written to.
-[info] 
-[debug] [2023-06-22T20:53:46.981Z] >>> [apiv2][query] GET https://ashesi-arm-y-default-rtdb.firebaseio.com/.settings/rules.json [none]
-[debug] [2023-06-22T20:53:48.146Z] <<< [apiv2][status] GET https://ashesi-arm-y-default-rtdb.firebaseio.com/.settings/rules.json 200
-[debug] [2023-06-22T20:53:48.146Z] <<< [apiv2][body] GET https://ashesi-arm-y-default-rtdb.firebaseio.com/.settings/rules.json [stream]
-[info] +  Database Rules for ashesi-arm-y-default-rtdb have been written to database.rules.json. 
-[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
-[info] firebase deploy.
-[info] 
-=== Hosting Setup
-[info] 
-[info] Your public directory is the folder (relative to your project directory) that
-[info] will contain Hosting assets to be uploaded with firebase deploy. If you
-[info] have a build process for your assets, use your build's output directory.
-[info] 
+[debug] [2023-06-23T01:35:14.297Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/ashesi-arm-y/sites 
+[debug] [2023-06-23T01:35:16.139Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/ashesi-arm-y/sites 200
+[debug] [2023-06-23T01:35:16.139Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/ashesi-arm-y/sites {"sites":[{"name":"projects/ashesi-arm-y/sites/ashesi-arm-y","defaultUrl":"https://ashesi-arm-y.web.app","appId":"1:1069096083638:web:617337365051f947600617","type":"DEFAULT_SITE"}]}
+[debug] [2023-06-23T01:35:16.139Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y/webApps/1:1069096083638:web:617337365051f947600617/config [none]
+[debug] [2023-06-23T01:35:17.299Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y/webApps/1:1069096083638:web:617337365051f947600617/config 200
+[debug] [2023-06-23T01:35:17.300Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y/webApps/1:1069096083638:web:617337365051f947600617/config {"projectId":"ashesi-arm-y","appId":"1:1069096083638:web:617337365051f947600617","databaseURL":"https://ashesi-arm-y-default-rtdb.firebaseio.com","storageBucket":"ashesi-arm-y.appspot.com","apiKey":"AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo","authDomain":"ashesi-arm-y.firebaseapp.com","messagingSenderId":"1069096083638","measurementId":"G-F40BZM1WQ9"}
+[debug] [2023-06-23T01:35:17.308Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y [none]
+[debug] [2023-06-23T01:35:18.134Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y 200
+[debug] [2023-06-23T01:35:18.135Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ashesi-arm-y {"projectId":"ashesi-arm-y","projectNumber":"1069096083638","displayName":"ashesi-arm-y","name":"projects/ashesi-arm-y","resources":{"hostingSite":"ashesi-arm-y","realtimeDatabaseInstance":"ashesi-arm-y-default-rtdb"},"state":"ACTIVE","etag":"1_49a119af-69bc-45ae-b7d3-c5effc8402d3"}
+[info] i  hosting[ashesi-arm-y]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[ashesi-arm-y]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:35:23 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:35:23 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:35:23 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:35:23 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:35:27 +0000] "GET /index.html HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:35:27 +0000] \"GET /index.html HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:35:37 +0000] "GET /signin.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:35:37 +0000] \"GET /signin.html HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:37:50 +0000] "GET /signin.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:37:50 +0000] \"GET /signin.html HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:37:51 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:37:51 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:37:52 +0000] "GET /signin.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:37:52 +0000] \"GET /signin.html HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:04 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:04 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:11 +0000] "GET /signin.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:11 +0000] \"GET /signin.html HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] "GET /signin.html HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] \"GET /signin.html HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] "GET /css/style1.css HTTP/1.1" 200 - "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] \"GET /css/style1.css HTTP/1.1\" 200 - \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] "GET /images/tentative.png HTTP/1.1" 200 5949 "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:21 +0000] \"GET /images/tentative.png HTTP/1.1\" 200 5949 \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:22 +0000] "GET /images/Generated2.png HTTP/1.1" 200 1672573 "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:22 +0000] \"GET /images/Generated2.png HTTP/1.1\" 200 1672573 \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:22 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5000/signin.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:22 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5000/signin.html\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Jun/2023:01:38:25 +0000] "GET /images/Generated2.png HTTP/1.1" 200 1672573 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Jun/2023:01:38:25 +0000] \"GET /images/Generated2.png HTTP/1.1\" 200 1672573 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\""}}
