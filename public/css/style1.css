@@ -1,59 +1,354 @@
-/* Form Page */
+@charset "UTF-8";
+@font-face {
+  font-family: "audiowide-regular-webfont";
+  src: url("../fonts/audiowide-regular-webfont.eot");
+  src: url("../fonts/audiowide-regular-webfont.woff") format("woff"),
+    url("../fonts/audiowide-regular-webfont.ttf") format("truetype"),
+    url("../fonts/audiowide-regular-webfont.svg") format("svg");
+}
+
 body {
-  /* background: url("../images/Generated2.png") no-repeat scroll center top */
-  /* #000000; */
-  /* background-size: cover; */
-  /* background-position: center; */
-}
-.container {
-  width: 400px;
-  margin: 100px auto;
-  padding: 60px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: audiowide-regular-webfont;
-  /* color: white; */
-  background-color: rgb(0, 0, 0, 0.9);
+  background-color: rgb(22, 22, 22);
   color: white;
+  animation-name: moveToLeft;
+  animation-duration: 2s;
+  font-family: "audiowide-regular-webfont";
 }
 
-h1 {
-  text-align: center;
+div#mainBody {
+  overflow: hidden;
+  padding: 50px;
+  margin-top: 10%;
+  display: inline-block;
+  width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: rgb(14, 14, 14);
 }
 
-.form-group {
-  margin-bottom: 15px;
+div#mainBody2 {
+  overflow: hidden;
+  padding: 100px;
+  margin-top: 10%;
+  display: inline-block;
+  width: 500px;
+  height: 600px;
+  background-color: rgb(22, 22, 22);
 }
 
-label {
-  display: block;
-  /* font-weight: bold; */
-  /* font-family: audiowide-regular-webfont; */
+h3#createText {
+  margin-top: 20px;
+  text-align: left;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-input[type="password"] {
-  width: 95%;
-  padding: 10px;
+input#username {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
   border-radius: 5px;
-  border: 1px solid #000000;
+}
+
+input#username:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#username:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#username:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#email {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#email:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#email:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#email:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#major {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#major:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#major:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#major:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#yearGroup {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#yearGroup:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#yearGroup:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#yearGroup:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#gender {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#gender:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#gender:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#gender:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#phone {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#phone:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#phone:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#phone:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#password {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#password:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#password:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#password:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#confirmPassword {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#confirmPassword:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#confirmPassword:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#confirmPassword:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
+}
+
+input#pin {
+  color: white;
+  padding-left: 20px;
+  margin-top: 20px;
+  float: center;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(20, 20, 20);
+  border: 0;
+  border-radius: 5px;
+}
+
+input#pin:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+input#pin:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+input#pin:focus {
+  outline: 0;
+  padding-left: 30px;
+  transform: scale(1.1);
+  border: 2px solid #f6d452;
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 10px;
+  margin-top: 30px;
+  width: 250px;
+  height: 40px;
+  color: white;
   background-color: #002b49;
-  color: #fff;
-  border: none;
+  border: 0;
   border-radius: 5px;
-  cursor: pointer;
-  font-family: audiowide-regular-webfont;
 }
 
 button:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
   background-color: #333e48;
+}
+
+button:not(:hover) {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+button:focus {
+  background-color: #f6d452;
+  transition: 0.5s;
+  transform: scale(1.2);
+  border: 0;
+  outline: 0;
+}
+
+.center {
+  margin-top: -96px;
+  margin-left: -96px;
+}
+
+@keyframes moveToLeft {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  #logo {
+    visibility: hidden;
+  }
 }

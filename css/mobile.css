@@ -501,3 +501,28 @@
     text-decoration: none;
   }
 }
+@media screen and (max-width: 600px) {
+  .mainBody {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of height */
+  }
+
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 60px;
+    padding-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: audiowide-regular-webfont;
+    /* color: white; */
+    background-color: white;
+    position: relative; /* Change position to relative */
+    top: 0; /* Remove top, left, and transform properties */
+    left: 0;
+    transform: none;
+  }
+}

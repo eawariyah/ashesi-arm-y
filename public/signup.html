@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style1.css" />
+    <title>Register form</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script>
@@ -78,57 +86,110 @@
     </script>
   </head>
   <body>
-    <div class="container">
-      <form class="signup-form" onsubmit="signUp(event)">
-        <h1>Sign Up</h1>
-        <div class="form-group">
-          <label for="username">Full Name:</label>
-          <input type="text" id="username" name="username" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Ashesi Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="major">Major:</label>
-          <input type="text" id="major" name="major" required />
-        </div>
-        <div class="form-group">
-          <label for="yearGroup">Year group (2024 - 2026):</label>
-          <input type="text" id="yearGroup" name="yearGroup" required />
-        </div>
-        <div class="form-group">
-          <label for="gender">Gender:</label>
-          <input type="text" id="gender" name="gender" required />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <br />
+    <div class="text-center">
+      <div class="container-xl" id="mainBody" style="height: 1024px">
+        <br />
+        <img src="images/tentative.png" style="margin-bottom: 49px" />
+        <h3 id="createText">Create your account</h3>
+        <form class="signup-form" onsubmit="signUp(event)">
           <div class="form-group">
-            <label for="pin">Pin:</label>
-            <input type="number" id="pin" name="pin" required />
+            <!-- <label for="username">Full Name:</label> -->
+            <input
+              type="text"
+              id="inputValue"
+              name="username"
+              placeholder="Full Name"
+            />
           </div>
-          <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
-          <input type="checkbox" id="merch" name="merch" required />
+          <div class="form-group">
+            <!-- <label for="email">Ashesi Email:</label> -->
+            <input
+              type="email"
+              id="inputValue"
+              name="email"
+              placeholder="Ashesi Email"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="major">Major:</label> -->
+            <input
+              type="text"
+              id="inputValue"
+              name="major"
+              placeholder="Major"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="yearGroup">Year group (2024 - 2026):</label> -->
+            <input
+              type="text"
+              id="inputValue"
+              name="yearGroup"
+              placeholder="Year group (2024 - 2026)"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="gender">Gender:</label> -->
+            <input
+              type="text"
+              id="inputValue"
+              name="gender"
+              placeholder="Gender"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="phone">Phone Number:</label> -->
+            <input
+              type="tel"
+              id="inputValue"
+              name="phone"
+              placeholder="Phone Number"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Password:</label> -->
+            <input
+              type="password"
+              id="inputValue"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Confirm Password:</label> -->
+            <input
+              type="password"
+              id="inputValue"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <!-- <label for="pin">Pin:</label> -->
+              <input
+                type="text"
+                id="inputValue"
+                name="pin"
+                placeholder="Pin"
+                required
+              />
+            </div>
+            <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
+            <input type="checkbox" id="merch" name="merch" />
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <a href="index1.html"><button>Or Sign In Here</button></a>
+      </div>
+
+      <div class="container-xl" id="mainBody2" style="height: 1024px">
+        <div class="center">
+          <h1 id="logo"><img src="images/Generated.png" alt="" /></h1>
         </div>
-        <button type="submit">Sign Up</button>
-      </form>
+      </div>
     </div>
   </body>
 </html>

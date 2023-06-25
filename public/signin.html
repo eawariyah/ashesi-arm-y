@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Sign In</title>
-    <link rel="stylesheet" type="text/css" href="./css/style1.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style1.css" />
+    <title>Register form</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script>
@@ -46,7 +54,7 @@
                 localStorage.setItem("loggedIn", "true");
 
                 // Redirect to index.html if the user is found
-                window.location.href = "index.html";
+                window.location.href = "index1.html";
               } else {
                 // Show an error message if the user is not found or the credentials don't match
                 alert("Invalid email or password. Please try again.");
@@ -68,33 +76,48 @@
 
         if (loggedIn === "true" || cookieValue === "loggedIn=true") {
           // Redirect to index.html if the user is already logged in
-          window.location.href = "index.html";
+          window.location.href = "index1.html";
         }
       });
     </script>
   </head>
-  <body
-    style="
-      background: url('../images/Generated2.png') no-repeat scroll center top
-        #000000;
-      background-size: cover;
-      background-position: center;
-    "
-  >
-    <div class="container">
-      <form class="signup-form" onsubmit="signIn(event)">
-        <img src="images/tentative.png" style="padding-left: 15%" />
-        <h1>Sign in</h1>
-        <div class="form-group">
-          <label for="email">Ashesi Email:</label>
-          <input type="email" id="email" name="email" required />
+  <body>
+    <div class="text-center">
+      <div class="container-xl" id="mainBody">
+        <br />
+        <img src="images/tentative.png" style="margin-bottom: 49px" />
+        <h3 id="createText">Sign In</h3>
+        <form class="signup-form" onsubmit="signIn(event)">
+          <!-- <h1>Sign in</h1> -->
+          <div class="form-group">
+            <!-- <label for="email">Ashesi Email:</label> -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ashesi Email"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Password:</label> -->
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" id="registerButton">Login</button>
+        </form>
+        <!-- <button id="registerButton"><span>Cadastrar-se</span></button> -->
+        <!-- <p id="sucesso"></p> -->
+      </div>
+
+      <div class="container-xl" id="mainBody2">
+        <div class="center">
+          <h1 id="logo"><img src="images/Generated2.png" alt="" /></h1>
         </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      </div>
     </div>
   </body>
 </html>

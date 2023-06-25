@@ -1,181 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARM-Y</title>
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="./css/mobile.css" />
-    <script src="js/mobile.js" type="text/javascript"></script>
-    <script src="js/styles.js" type="text/javascript"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style1.css" />
+    <title>Register form</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
+        authDomain: "ashesi-arm-y.firebaseapp.com",
+        projectId: "ashesi-arm-y",
+        storageBucket: "ashesi-arm-y.appspot.com",
+        messagingSenderId: "1069096083638",
+        appId: "1:1069096083638:web:617337365051f947600617",
+        measurementId: "G-F40BZM1WQ9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      const db = firebase.firestore();
+
+      // Function to handle form submission
+      // Function to handle form submission
+      function signUp(event) {
+        event.preventDefault();
+
+        // Get form values
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const major = document.getElementById("major").value;
+        const yearGroup = document.getElementById("yearGroup").value;
+        const gender = document.getElementById("gender").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        const pin = document.getElementById("pin").value;
+        const merch = document.getElementById("merch").checked;
+
+        // Check if the pin is correct
+        if (pin !== "4492") {
+          alert("Incorrect pin. Please enter the correct pin.");
+          return;
+        }
+
+        // Check if the password and confirm password match
+        if (password !== confirmPassword) {
+          alert("Password and Confirm Password must match.");
+          return;
+        }
+
+        // Create a user object
+        const user = {
+          username,
+          email,
+          major,
+          yearGroup,
+          gender,
+          phone,
+          password,
+          pin,
+          merch,
+        };
+
+        // Save user details to Firestore
+        db.collection("users")
+          .add(user)
+          .then(() => {
+            // Redirect to signin.html after successful signup
+            window.location.href = "signin.html";
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+      }
+    </script>
   </head>
   <body>
-    <div id="page">
-      <div id="header">
-        <div>
-          <a href="index.html" class="logo"
-            ><img src="images/tentative.png" alt=""
-          /></a>
-          <ul id="navigation">
-            <li class="selected">
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="about.html">About</a>
-            </li>
-            <li class="menu">
-              <a href="projects.html">Projects</a>
-              <ul class="primary">
-                <li>
-                  <a href="IPS1.html" style="font-size: 12px">IPS1 1</a>
-                  <a href="IPS2.html" style="font-size: 12px">IPS1 2</a>
-                  <a href="myTurn.html" style="font-size: 12px">My Turn</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="menu">
-              <a href="blog.html">Blog</a>
-              <ul class="secondary">
-                <li>
-                  <a href="event1.html" style="font-size: 12px"
-                    >Ecosys-Meetup</a
-                  >
-                  <a href="event2.html" style="font-size: 12px"
-                    >2023 Maker Fair</a
-                  >
-                  <a href="blog.html" style="font-size: 12px">More</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu">
-              <a href="projects.html">Resources</a>
-              <ul class="primary">
-                <li>
-                  <a href="squad.html" style="font-size: 12px">Meet the team</a>
-                  <a href="gallery.html" style="font-size: 12px">Gallery</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div id="body" class="home">
-        <div class="header">
-          <div>
-            <img src="images/satellite.png" alt="" class="satellite" />
-            <img
-              src="images/free-arrow-down-icon-3101-3.png"
-              alt=""
-              class="down_arrow"
+    <div class="text-center">
+      <div class="container-xl" id="mainBody" style="height: 1024px">
+        <br />
+        <img src="images/tentative.png" style="margin-bottom: 49px" />
+        <h3 id="createText">Create your account</h3>
+        <form class="signup-form" onsubmit="signUp(event)">
+          <div class="form-group">
+            <!-- <label for="username">Full Name:</label> -->
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Full Name"
             />
-            <h1 style="text-align: center">ARM-Y ASHESI</h1>
-            <h2>(E³)NGAGE</h2>
-            <h2 class="short_description">
-              Welcome to the official website of the Arm student club at Ashesi
-              University!
-            </h2>
-
-            <a href="about.html" class="more">Read More</a>
-            <h3>FEATURED PROJECTS</h3>
-            <ul>
-              <li>
-                <a href="projects.html"
-                  ><img src="images/project-image5.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="projects.html"
-                  ><img src="images/Project_1.jpg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="projects.html"
-                  ><img src="images/Project_2.jpg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="projects.html"
-                  ><img src="images/Project_3.jpg" alt=""
-                /></a>
-              </li>
-            </ul>
           </div>
-        </div>
-        <div class="body">
-          <div>
-            <h1>OUR MISSION</h1>
-            <p>
-              To foster innovation, entrepreneurship, and research at Ashesi
-              University using ARM products.
-            </p>
+          <div class="form-group">
+            <!-- <label for="email">Ashesi Email:</label> -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ashesi Email"
+            />
           </div>
-        </div>
-        <div class="footer">
-          <div>
-            <ul>
-              <li>
-                <h1>FEATURED VIDEO</h1>
-                <a href="blog.html"
-                  ><img src="images/mars-rover.jpg" alt="" /><span></span
-                ></a>
-              </li>
-              <li>
-                <h1>LATEST BLOG</h1>
-                <ul>
-                  <li>
-                    <a href="event1.html"
-                      ><img
-                        src="images/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-7.jpg"
-                        alt=""
-                    /></a>
-                    <h1>Ecosystem Meetup</h1>
-                    <span>FEBRUARY 4, 2023</span>
-                    <a href="event1.html" class="more">Read More</a>
-                  </li>
-                  <li>
-                    <a href="event2.html"
-                      ><img src="images/IMG_9430.JPG" alt=""
-                    /></a>
-                    <h1>Maker Fair</h1>
-                    <span>April 21, 2023</span>
-                    <a href="event2.html" class="more">Read More</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          <div class="form-group">
+            <!-- <label for="major">Major:</label> -->
+            <input type="text" id="major" name="major" placeholder="Major" />
           </div>
-        </div>
-      </div>
-      <div id="footer">
-        <div class="connect">
-          <div>
-            <h1>FOLLOW OUR mission ON</h1>
-            <div>
-              <a
-                href="http://Must_change_ _update.com/go/facebook/"
-                class="facebook"
-                >facebook</a
-              >
-              <a
-                href="http://Must_change_ _update.com/go/twitter/"
-                class="twitter"
-                >twitter</a
-              >
-              <!-- <a href="http://Must_change_ _update.com/go/googleplus/" class="googleplus">googleplus</a> -->
-              <a href="http://pinterest.com/fwtemplates/" class="pinterest"
-                >pinterest</a
-              >
+          <div class="form-group">
+            <!-- <label for="yearGroup">Year group (2024 - 2026):</label> -->
+            <input
+              type="text"
+              id="yearGroup"
+              name="yearGroup"
+              placeholder="Year group (2024 - 2026)"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="gender">Gender:</label> -->
+            <input type="text" id="gender" name="gender" placeholder="Gender" />
+          </div>
+          <div class="form-group">
+            <!-- <label for="phone">Phone Number:</label> -->
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone Number"
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Password:</label> -->
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <!-- <label for="password">Confirm Password:</label> -->
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <div class="form-group">
+              <!-- <label for="pin">Pin:</label> -->
+              <input
+                type="text"
+                id="pin"
+                name="pin"
+                placeholder="Pin"
+                required
+              />
             </div>
+            <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
+            <input type="checkbox" id="merch" name="merch" />
           </div>
-        </div>
-        <div class="footnote">
-          <div>
-            <p>&copy; ARM-Y | 2023</p>
-          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <a href="signin.html"><button>Or Sign In Here</button></a>
+      </div>
+
+      <div class="container-xl" id="mainBody2" style="height: 1024px">
+        <div class="center">
+          <h1 id="logo"><img src="images/Generated.png" alt="" /></h1>
         </div>
       </div>
     </div>
