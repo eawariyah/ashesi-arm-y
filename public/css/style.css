@@ -1035,6 +1035,7 @@ img {
   margin: 0 40px 0 10px;
   padding: 0;
   width: 560px;
+  /* width: 1000px; */
 }
 #body .header div .article ul {
   display: inline-block;
@@ -1538,58 +1539,27 @@ img {
 
 /* Form Page */
 body {
-  background: url("../images/Generated.png") no-repeat scroll center top #000000;
+  background-color: #000000;
   background-size: cover;
   background-position: center;
 }
-.container {
-  width: 400px;
-  margin: 100px auto;
-  padding: 60px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: audiowide-regular-webfont;
-  /* color: white; */
-  background-color: white;
-}
-
-h1 {
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  /* font-weight: bold; */
-  /* font-family: audiowide-regular-webfont; */
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-input[type="password"] {
-  width: 95%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #000000;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
+.galleryMore {
   background-color: #002b49;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: audiowide-regular-webfont;
+  color: #ffffff;
+  display: block;
+  float: right;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal;
+  height: 31px;
+  line-height: 31px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+  border-radius: 2px;
 }
-
-button:hover {
+.galleryMore:hover {
   background-color: #333e48;
 }

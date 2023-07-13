@@ -29,7 +29,7 @@ div#mainBody {
 div#mainBody2 {
   overflow: hidden;
   padding: 100px;
-  margin-top: 1%;
+  margin-top: 4%;
   display: inline-block;
   width: 500px;
   height: 600px;
@@ -41,58 +41,29 @@ h3#createText {
   text-align: left;
 }
 
-input#firstName {
+input#username {
   color: white;
   padding-left: 20px;
   margin-top: 20px;
   float: center;
-  width: 49%;
+  width: 100%;
   height: 45px;
   background-color: rgb(20, 20, 20);
   border: 0;
   border-radius: 5px;
 }
 
-input#firstName:hover {
+input#username:hover {
   transition: 0.5s;
   transform: scale(1.1);
 }
 
-input#firstName:not(:hover) {
+input#username:not(:hover) {
   transition: 0.5s;
   transform: scale(1);
 }
 
-input#firstName:focus {
-  outline: 0;
-  padding-left: 30px;
-  transform: scale(1.1);
-  border: 2px solid #f6d452;
-}
-
-input#lastName {
-  color: white;
-  padding-left: 20px;
-  margin-top: 20px;
-  float: center;
-  width: 49%;
-  height: 45px;
-  background-color: rgb(20, 20, 20);
-  border: 0;
-  border-radius: 5px;
-}
-
-input#lastName:hover {
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-
-input#lastName:not(:hover) {
-  transition: 0.5s;
-  transform: scale(1);
-}
-
-input#lastName:focus {
+input#username:focus {
   outline: 0;
   padding-left: 30px;
   transform: scale(1.1);
@@ -128,7 +99,7 @@ input#email:focus {
   border: 2px solid #f6d452;
 }
 
-select#major {
+input#major {
   color: white;
   padding-left: 20px;
   margin-top: 20px;
@@ -140,24 +111,24 @@ select#major {
   border-radius: 5px;
 }
 
-select#major:hover {
+input#major:hover {
   transition: 0.5s;
   transform: scale(1.1);
 }
 
-select#major:not(:hover) {
+input#major:not(:hover) {
   transition: 0.5s;
   transform: scale(1);
 }
 
-select#major:focus {
+input#major:focus {
   outline: 0;
   padding-left: 30px;
   transform: scale(1.1);
   border: 2px solid #f6d452;
 }
 
-select#yearGroup {
+input#yearGroup {
   color: white;
   padding-left: 20px;
   margin-top: 20px;
@@ -169,52 +140,23 @@ select#yearGroup {
   border-radius: 5px;
 }
 
-select#yearGroup:hover {
+input#yearGroup:hover {
   transition: 0.5s;
   transform: scale(1.1);
 }
 
-select#yearGroup:not(:hover) {
+input#yearGroup:not(:hover) {
   transition: 0.5s;
   transform: scale(1);
 }
 
-select#yearGroup:focus {
+input#yearGroup:focus {
   outline: 0;
   padding-left: 30px;
   transform: scale(1.1);
   border: 2px solid #f6d452;
 }
 
-select#merch {
-  color: white;
-  font-size: 15px;
-  padding-left: 20px;
-  margin-top: 20px;
-  float: center;
-  width: 100%;
-  height: 45px;
-  background-color: rgb(20, 20, 20);
-  border: 0;
-  border-radius: 5px;
-}
-
-select#merch:hover {
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-
-select#merch:not(:hover) {
-  transition: 0.5s;
-  transform: scale(1);
-}
-
-select#merch:focus {
-  outline: 0;
-  padding-left: 30px;
-  transform: scale(1.1);
-  border: 2px solid #f6d452;
-}
 input#gender {
   color: white;
   padding-left: 20px;

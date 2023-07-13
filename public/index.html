@@ -2,184 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/tentativeFavicon.png" />
+    <title>Welcome</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/landingPage.css" />
+
     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
-      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style1.css" />
-    <title>Register form</title>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script>
-      // Initialize Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
-        authDomain: "ashesi-arm-y.firebaseapp.com",
-        projectId: "ashesi-arm-y",
-        storageBucket: "ashesi-arm-y.appspot.com",
-        messagingSenderId: "1069096083638",
-        appId: "1:1069096083638:web:617337365051f947600617",
-        measurementId: "G-F40BZM1WQ9",
-      };
-      firebase.initializeApp(firebaseConfig);
 
-      // Get a reference to the Firestore database
-      const db = firebase.firestore();
-
-      // Function to handle form submission
-      // Function to handle form submission
-      function signUp(event) {
-        event.preventDefault();
-
-        // Get form values
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const major = document.getElementById("major").value;
-        const yearGroup = document.getElementById("yearGroup").value;
-        const gender = document.getElementById("gender").value;
-        const phone = document.getElementById("phone").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
-        const pin = document.getElementById("pin").value;
-        const merch = document.getElementById("merch").checked;
-
-        // Check if the pin is correct
-        if (pin !== "4492") {
-          alert("Incorrect pin. Please enter the correct pin.");
-          return;
-        }
-
-        // Check if the password and confirm password match
-        if (password !== confirmPassword) {
-          alert("Password and Confirm Password must match.");
-          return;
-        }
-
-        // Create a user object
-        const user = {
-          username,
-          email,
-          major,
-          yearGroup,
-          gender,
-          phone,
-          password,
-          pin,
-          merch,
-        };
-
-        // Save user details to Firestore
-        db.collection("users")
-          .add(user)
-          .then(() => {
-            // Redirect to signin.html after successful signup
-            window.location.href = "signin.html";
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
-      }
-    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="text-center">
-      <div class="container-xl" id="mainBody" style="height: 1024px">
-        <br />
-        <img src="images/tentative.png" style="margin-bottom: 49px" />
-        <h3 id="createText">Create your account</h3>
-        <form class="signup-form" onsubmit="signUp(event)">
-          <div class="form-group">
-            <!-- <label for="username">Full Name:</label> -->
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Full Name"
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="email">Ashesi Email:</label> -->
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Ashesi Email"
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="major">Major:</label> -->
-            <input type="text" id="major" name="major" placeholder="Major" />
-          </div>
-          <div class="form-group">
-            <!-- <label for="yearGroup">Year group (2024 - 2026):</label> -->
-            <input
-              type="text"
-              id="yearGroup"
-              name="yearGroup"
-              placeholder="Year group (2024 - 2026)"
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="gender">Gender:</label> -->
-            <input type="text" id="gender" name="gender" placeholder="Gender" />
-          </div>
-          <div class="form-group">
-            <!-- <label for="phone">Phone Number:</label> -->
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Phone Number"
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="password">Password:</label> -->
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="password">Confirm Password:</label> -->
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <div class="form-group">
-              <!-- <label for="pin">Pin:</label> -->
-              <input
-                type="text"
-                id="pin"
-                name="pin"
-                placeholder="Pin"
-                required
-              />
-            </div>
-            <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
-            <input type="checkbox" id="merch" name="merch" />
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-        <a href="signin.html"><button>Or Sign In Here</button></a>
-      </div>
+    <section class="wrapper">
+      <div class="container">
+        <div class="grid-cols-2">
+          <div class="grid-item-1">
+            <h1 class="main-heading" , style="color: white">
+              <img src="images/tentative.png" alt="" />
 
-      <div class="container-xl" id="mainBody2" style="height: 1024px">
-        <div class="center">
-          <h1 id="logo"><img src="images/Generated.png" alt="" /></h1>
+              <!-- Welcome to <span>Ashesi Army.</span>
+              <br /> -->
+              Welcome to the
+              <span> Arm-y Student Club at Ashesi University! </span>
+            </h1>
+            <p class="info-text" style="color: white">
+              Step into our official website and join a community that thrives
+              on the boundless possibilities of technology and innovation.
+            </p>
+
+            <div class="btn_wrapper">
+              <a class="btn view_more_btn" href="signup.html">
+                Sign up <i class="ri-arrow-right-line"></i>
+              </a>
+              <a class="btn signin_btn" href="signin.html"> Sign in </a>
+            </div>
+          </div>
+
+          <div class="grid-item-2">
+            <div class="team_img_wrapper">
+              <img src="./images/landingPage.png" alt="team-img" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="./js/landingPage.js" defer></script>
   </body>
 </html>

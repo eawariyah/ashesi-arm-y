@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>User Details</title>
+    <link rel="icon" href="images/tentativeFavicon.png" />
+    <title>Admin</title>
     <style>
       table {
         width: 100%;
@@ -23,10 +24,17 @@
   <body>
     <div class="container">
       <h1 style="align-items: center">User Details</h1>
+      <button id="exportButton">Export to CSV</button>
+      <button id="graphButton">Draw Graph for Major</button>
+      <button id="graphButton1">Draw Graph for Year Group</button>
+      <button id="graphButton2">Draw Graph for Gender</button>
+      <button id="graphButton3">Draw Graph for Merchandise</button>
+
       <table>
         <thead>
           <tr>
-            <th>Full Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Email</th>
             <th>Major</th>
             <th>Year Group</th>
@@ -41,6 +49,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       // Initialize Firebase
       const firebaseConfig = {
@@ -67,9 +76,13 @@
             const user = doc.data();
             const row = document.createElement("tr");
 
-            const fullNameCell = document.createElement("td");
-            fullNameCell.textContent = user.username;
-            row.appendChild(fullNameCell);
+            const firstNameCell = document.createElement("td");
+            firstNameCell.textContent = user.firstName;
+            row.appendChild(firstNameCell);
+
+            const lastNameCell = document.createElement("td");
+            lastNameCell.textContent = user.lastName;
+            row.appendChild(lastNameCell);
 
             const emailCell = document.createElement("td");
             emailCell.textContent = user.email;
@@ -101,6 +114,282 @@
         .catch((error) => {
           console.error("Error retrieving user details: ", error);
         });
+
+      // Export table data to CSV file
+      const exportButton = document.getElementById("exportButton");
+      exportButton.addEventListener("click", () => {
+        const userTable = document.querySelector("table");
+        const csvContent = Array.from(userTable.rows)
+          .map((row) =>
+            Array.from(row.cells)
+              .map((cell) => cell.textContent)
+              .join(",")
+          )
+          .join("\n");
+        const blob = new Blob([csvContent], {
+          type: "text/csv;charset=utf-8;",
+        });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "user_details.csv");
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      // Draw graph based on table data for Major
+      const graphButton = document.getElementById("graphButton");
+      let graphDisplayed = false;
+      let chartContainer;
+
+      graphButton.addEventListener("click", () => {
+        if (graphDisplayed) {
+          chartContainer.remove();
+          graphDisplayed = false;
+        } else {
+          const tableRows = Array.from(
+            document.querySelectorAll("table tbody tr")
+          );
+          const data = tableRows.map((row) => ({
+            firstName: row.cells[0].textContent,
+            major: row.cells[3].textContent,
+          }));
+
+          const majorCounts = {};
+          data.forEach((row) => {
+            if (majorCounts[row.major]) {
+              majorCounts[row.major]++;
+            } else {
+              majorCounts[row.major] = 1;
+            }
+          });
+
+          const labels = Object.keys(majorCounts);
+          const counts = Object.values(majorCounts);
+
+          const ctx = document.createElement("canvas").getContext("2d");
+          chartContainer = document.createElement("div");
+          chartContainer.appendChild(ctx.canvas);
+          document.body.appendChild(chartContainer);
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Major Count",
+                  data: counts,
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  stepSize: 1,
+                },
+              },
+            },
+          });
+
+          graphDisplayed = true;
+        }
+      });
+
+      // Draw graph based on table data for Year Group
+      const graphButton1 = document.getElementById("graphButton1");
+      let graphDisplayed1 = false;
+      let chartContainer1;
+
+      graphButton1.addEventListener("click", () => {
+        if (graphDisplayed1) {
+          chartContainer1.remove();
+          graphDisplayed1 = false;
+        } else {
+          const tableRows1 = Array.from(
+            document.querySelectorAll("table tbody tr")
+          );
+          const data1 = tableRows1.map((row) => ({
+            firstName: row.cells[0].textContent,
+            yearGroup: row.cells[4].textContent,
+          }));
+
+          const yearCounts = {};
+          data1.forEach((row) => {
+            if (yearCounts[row.yearGroup]) {
+              yearCounts[row.yearGroup]++;
+            } else {
+              yearCounts[row.yearGroup] = 1;
+            }
+          });
+
+          const labels = Object.keys(yearCounts);
+          const counts = Object.values(yearCounts);
+
+          const ctx = document.createElement("canvas").getContext("2d");
+          chartContainer1 = document.createElement("div");
+          chartContainer1.appendChild(ctx.canvas);
+          document.body.appendChild(chartContainer1);
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Year Count",
+                  data: counts,
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  stepSize: 1,
+                },
+              },
+            },
+          });
+
+          graphDisplayed1 = true;
+        }
+      });
+
+      // Draw graph based on table data for Gender
+      const graphButton2 = document.getElementById("graphButton2");
+      let graphDisplayed2 = false;
+      let chartContainer2;
+
+      graphButton2.addEventListener("click", () => {
+        if (graphDisplayed2) {
+          chartContainer2.remove();
+          graphDisplayed2 = false;
+        } else {
+          const tableRows2 = Array.from(
+            document.querySelectorAll("table tbody tr")
+          );
+          const data2 = tableRows2.map((row) => ({
+            firstName: row.cells[0].textContent,
+            gender: row.cells[5].textContent,
+          }));
+
+          const genderCounts = {};
+          data2.forEach((row) => {
+            if (genderCounts[row.gender]) {
+              genderCounts[row.gender]++;
+            } else {
+              genderCounts[row.gender] = 1;
+            }
+          });
+
+          const labels = Object.keys(genderCounts);
+          const counts = Object.values(genderCounts);
+
+          const ctx = document.createElement("canvas").getContext("2d");
+          chartContainer2 = document.createElement("div");
+          chartContainer2.appendChild(ctx.canvas);
+          document.body.appendChild(chartContainer2);
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Gender Count",
+                  data: counts,
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  stepSize: 1,
+                },
+              },
+            },
+          });
+
+          graphDisplayed2 = true;
+        }
+      });
+
+      // Draw graph based on table data for Merchandise
+      const graphButton3 = document.getElementById("graphButton3");
+      let graphDisplayed3 = false;
+      let chartContainer3;
+
+      graphButton3.addEventListener("click", () => {
+        if (graphDisplayed3) {
+          chartContainer3.remove();
+          graphDisplayed3 = false;
+        } else {
+          const tableRows3 = Array.from(
+            document.querySelectorAll("table tbody tr")
+          );
+          const data3 = tableRows3.map((row) => ({
+            firstName: row.cells[0].textContent,
+            merchandise: row.cells[7].textContent,
+          }));
+
+          const merchCounts = {};
+          data3.forEach((row) => {
+            if (merchCounts[row.merchandise]) {
+              merchCounts[row.merchandise]++;
+            } else {
+              merchCounts[row.merchandise] = 1;
+            }
+          });
+
+          const labels = Object.keys(merchCounts);
+          const counts = Object.values(merchCounts);
+
+          const ctx = document.createElement("canvas").getContext("2d");
+          chartContainer3 = document.createElement("div");
+          chartContainer3.appendChild(ctx.canvas);
+          document.body.appendChild(chartContainer3);
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "Merchandise Count",
+                  data: counts,
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  stepSize: 1,
+                },
+              },
+            },
+          });
+
+          graphDisplayed3 = true;
+        }
+      });
     </script>
   </body>
 </html>

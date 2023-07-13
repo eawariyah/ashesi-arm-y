@@ -9,7 +9,7 @@
       integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style1.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
     <title>Register form</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -35,18 +35,18 @@
 
         // Get form values
         const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const pin = document.getElementById("pin").value;
 
-        // Check if the username and password match
-        if (email === "admin@1234" && password === "admin1234") {
+        // Check if the username and pin match
+        if (email === "admin@1234" && pin === "admin1234") {
           // Redirect to admin.html if the credentials match
           document.cookie = "loggedIn=true";
           window.location.href = "admin.html";
         } else {
-          // Query Firestore for the user with the given email and password
+          // Query Firestore for the user with the given email and pin
           db.collection("users")
             .where("email", "==", email)
-            .where("password", "==", password)
+            .where("pin", "==", pin)
             .get()
             .then((querySnapshot) => {
               if (!querySnapshot.empty) {
@@ -57,7 +57,7 @@
                 window.location.href = "index1.html";
               } else {
                 // Show an error message if the user is not found or the credentials don't match
-                alert("Invalid email or password. Please try again.");
+                alert("Invalid email or pin. Please try again.");
               }
             })
             .catch((error) => {
@@ -99,13 +99,7 @@
             />
           </div>
           <div class="form-group">
-            <!-- <label for="password">Password:</label> -->
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
+            <input type="password" id="pin" name="pin" placeholder="Pin" />
           </div>
           <button type="submit" id="registerButton">Login</button>
         </form>

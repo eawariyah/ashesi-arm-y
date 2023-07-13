@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="images/tentativeFavicon.png" />
+    <title>Sign-Up</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -35,39 +37,36 @@
         event.preventDefault();
 
         // Get form values
-        const username = document.getElementById("username").value;
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+
         const email = document.getElementById("email").value;
         const major = document.getElementById("major").value;
         const yearGroup = document.getElementById("yearGroup").value;
         const gender = document.getElementById("gender").value;
         const phone = document.getElementById("phone").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
+        // const password = document.getElementById("password").value;
+        // const confirmPassword =
+        //   document.getElementById("confirmPassword").value;
         const pin = document.getElementById("pin").value;
-        const merch = document.getElementById("merch").checked;
+        const merch = document.getElementById("merch").value;
 
         // Check if the pin is correct
-        if (pin !== "4492") {
+        if (pin !== "1234") {
           alert("Incorrect pin. Please enter the correct pin.");
-          return;
-        }
-
-        // Check if the password and confirm password match
-        if (password !== confirmPassword) {
-          alert("Password and Confirm Password must match.");
           return;
         }
 
         // Create a user object
         const user = {
-          username,
+          firstName,
+          lastName,
           email,
           major,
           yearGroup,
           gender,
           phone,
-          password,
+          // password,
           pin,
           merch,
         };
@@ -87,105 +86,117 @@
   </head>
   <body>
     <div class="text-center">
-      <div class="container-xl" id="mainBody" style="height: 1024px">
+      <div class="container-xl" id="mainBody" style="height: 930px">
         <br />
         <img src="images/tentative.png" style="margin-bottom: 49px" />
         <h3 id="createText">Create your account</h3>
         <form class="signup-form" onsubmit="signUp(event)">
-          <div class="form-group">
+          <div class="nameGroup" style="flex-direction: row">
             <!-- <label for="username">Full Name:</label> -->
             <input
               type="text"
-              id="inputValue"
+              id="firstName"
               name="username"
-              placeholder="Full Name"
+              placeholder="First Name"
+              style="align-items: flex-start"
+              required
+            />
+            <input
+              type="text"
+              id="lastName"
+              name="username"
+              placeholder="Last Name"
+              style="align-items: flex-end"
+              required
             />
           </div>
           <div class="form-group">
             <!-- <label for="email">Ashesi Email:</label> -->
             <input
               type="email"
-              id="inputValue"
+              id="email"
               name="email"
               placeholder="Ashesi Email"
+              required
             />
           </div>
           <div class="form-group">
-            <!-- <label for="major">Major:</label> -->
-            <input
-              type="text"
-              id="inputValue"
-              name="major"
-              placeholder="Major"
-            />
+            <select id="major" name="major" required>
+              <option value="" disabled selected hidden>Major</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Computer Engineering">Computer Engineering</option>
+              <option value="Computer Engineering">Mechatronics</option>
+
+              <option value="Electrical Engineering">
+                Electrical Engineering
+              </option>
+              <option value="Mechanical Engineering">
+                Mechanical Engineering
+              </option>
+            </select>
           </div>
+
           <div class="form-group">
-            <!-- <label for="yearGroup">Year group (2024 - 2026):</label> -->
-            <input
-              type="text"
-              id="inputValue"
-              name="yearGroup"
-              placeholder="Year group (2024 - 2026)"
-            />
+            <select id="yearGroup" name="yearGroup" required>
+              <option value="" disabled selected hidden>Year Group</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+            </select>
           </div>
+
           <div class="form-group">
             <!-- <label for="gender">Gender:</label> -->
             <input
               type="text"
-              id="inputValue"
+              id="gender"
               name="gender"
               placeholder="Gender"
+              required
             />
           </div>
           <div class="form-group">
             <!-- <label for="phone">Phone Number:</label> -->
             <input
-              type="tel"
-              id="inputValue"
+              type="list"
+              id="phone"
               name="phone"
               placeholder="Phone Number"
-            />
-          </div>
-          <div class="form-group">
-            <!-- <label for="password">Password:</label> -->
-            <input
-              type="password"
-              id="inputValue"
-              name="password"
-              placeholder="Password"
               required
             />
           </div>
-          <div class="form-group">
-            <!-- <label for="password">Confirm Password:</label> -->
-            <input
-              type="password"
-              id="inputValue"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              required
-            />
-          </div>
+
           <div class="form-group">
             <div class="form-group">
               <!-- <label for="pin">Pin:</label> -->
               <input
                 type="text"
-                id="inputValue"
+                id="pin"
                 name="pin"
                 placeholder="Pin"
                 required
               />
             </div>
-            <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
-            <input type="checkbox" id="merch" name="merch" />
+
+            <!-- <label for="merch">Do you have ARM merchandise (t-shirts)?:</label>
+            <input type="checkbox" id="merch" name="merch" required /> -->
+          </div>
+          <div class="form-group">
+            <select id="merch" name="merch" required>
+              <option value="" disabled selected hidden>
+                Do you have ARM merchandise (t-shirt)?
+              </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <a href="index1.html"><button>Or Sign In Here</button></a>
+        <a href="signin.html"><button>Or Sign In Here</button></a>
       </div>
 
-      <div class="container-xl" id="mainBody2" style="height: 1024px">
+      <div class="container-xl" id="mainBody2" style="height: 930px">
         <div class="center">
           <h1 id="logo"><img src="images/Generated.png" alt="" /></h1>
         </div>

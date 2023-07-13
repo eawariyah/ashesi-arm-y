@@ -4,7 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>proj1 - ARM-Y</title>
+    <link rel="icon" href="images/tentativeFavicon.png" />
+    <title>Gallery</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" />
     <script src="js/mobile.js" type="text/javascript"></script>
@@ -30,7 +31,6 @@
         text-align: center;
         margin-bottom: 20px;
       }
-
       .featured-images {
         text-align: center;
         margin-bottom: 40px;
@@ -38,6 +38,12 @@
         perspective: 800px;
         transform-style: preserve-3d;
         height: 400px;
+        width: 425px;
+        position: absolute;
+        top: 400px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
       }
 
       .featured-images img {
@@ -49,21 +55,20 @@
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         position: absolute;
-        top: 25%;
-        left: 25%;
-        transform: translate(-50%, -50%) rotateY(0deg);
+        transform: rotateY(0deg);
         animation: rotateImages 10s linear infinite;
       }
 
       @keyframes rotateImages {
         0% {
-          transform: translate(-50%, -50%) rotateY(0deg);
+          transform: rotateY(0deg);
         }
         100% {
-          transform: translate(-50%, -50%) rotateY(360deg);
+          transform: rotateY(360deg);
         }
       }
 
+      /* 
       .featured-images img:nth-child(1) {
         transform: translate(-50%, -50%) rotateY(0deg) translateZ(200px);
         z-index: 3;
@@ -77,7 +82,7 @@
       .featured-images img:nth-child(3) {
         transform: translate(-50%, -50%) rotateY(240deg) translateZ(100px);
         z-index: 1;
-      }
+      } */
 
       .year {
         margin-bottom: 20px;
@@ -158,6 +163,24 @@
       .close-btn:hover {
         color: #ccc;
       }
+      .yearMobile {
+        color: #ffc700;
+        display: block;
+        font-family: audiowide-regular-webfont;
+        font-size: 23px;
+        font-weight: normal;
+        line-height: 23px;
+        margin: 0 auto;
+        padding: 53px 0 27px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 780px;
+      }
+      @media only screen and (max-width: 918px) {
+        .yearMobile {
+          line-height: 50;
+        }
+      }
     </style>
   </head>
   <body>
@@ -200,10 +223,12 @@
               </ul>
             </li>
             <li class="menu">
-              <a href="projects.html">Resources</a>
+              <a href="resources.html">Resources</a>
+
               <ul class="primary">
                 <li>
                   <a href="squad.html" style="font-size: 12px">Meet the team</a>
+                  <a href="learn.html" style="font-size: 12px">Learn</a>
                   <a href="gallery.html" style="font-size: 12px">Gallery</a>
                 </li>
               </ul>
@@ -218,134 +243,127 @@
         <div class="header">
           <div class="gallery">
             <h1>Gallery</h1>
+            <h1 class="featuredMobile">Featured Images</h1>
 
             <div class="featured-images">
-              <h1>Featured Images</h1>
+              <h1></h1>
               <!-- <img src="images/Generated2.png" alt="Featured Image 1" /> -->
               <!-- <img src="images/alien-life.jpg" alt="Featured Image 2" /> -->
               <!-- <img src="images/earth-satellite.jpg" alt="Featured Image 3" /> -->
             </div>
 
             <div class="year">
-              <h2>2023</h2>
+              <img
+                src="images/free-arrow-down-icon-3101-3.png"
+                alt=""
+                style="position: absolute; top: 27%; left: 50%; right: 50%"
+              />
 
-              <div class="event">
-                <h3>Event 1</h3>
+              <div class="event" style="line-height: 0">
+                <h2
+                  class="yearMobile"
+                  style="
+                    line-height: 17;
+                    text-align: start;
+                    height: 200px;
+                    margin: 0;
+                  "
+                >
+                  2023
+                </h2>
+                <h3>Maker Fair</h3>
 
                 <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-13.jpg"
-                    alt="Image 2"
-                  />
+                  <img src="Gallery/maker/IMG_9499.JPG" alt="Image 2" />
                 </div>
                 <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-14.jpg"
-                    alt="Image 2"
-                  />
+                  <img src="Gallery/maker/IMG_9509.jpg" alt="Image 2" />
                 </div>
                 <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-15.jpg"
-                    alt="Image 2"
-                  />
+                  <img src="Gallery/maker/IMG_9510.jpg" alt="Image 2" />
                 </div>
                 <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-17.jpg"
-                    alt="Image 2"
-                  />
+                  <img src="Gallery/maker/IMG_9516.jpg" alt="Image 2" />
                 </div>
+                <div class="gallery-image">
+                  <img src="Gallery/maker/IMG_9523.jpg" alt="Image 2" />
+                </div>
+                <div class="gallery-image">
+                  <img src="Gallery/maker/IMG_9554.jpg" alt="Image 2" />
+                </div>
+                <div class="gallery-image">
+                  <img src="Gallery/maker/IMG_9652.jpg" alt="Image 2" />
+                </div>
+                <div class="gallery-image">
+                  <img src="Gallery/maker/IMG_9692.JPG" alt="Image 2" />
+                </div>
+                <a
+                  href="https://drive.google.com/drive/folders/1kQ1hoNQ3TG04JWkZtgmjCmCFOWrSgZcM?usp=sharing"
+                  class="galleryMore"
+                  >View More</a
+                >
               </div>
 
               <div class="event">
-                <h3>Event 2</h3>
+                <h3>Ecosystem Meetup</h3>
                 <div class="gallery-image">
                   <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-1.jpg"
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-1.jpg"
                     alt="Image 1"
                   />
                 </div>
                 <div class="gallery-image">
                   <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-2.jpg"
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-96.jpg"
                     alt="Image 2"
                   />
                 </div>
                 <div class="gallery-image">
                   <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-3.jpg"
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-122.jpg"
                     alt="Image 2"
                   />
                 </div>
                 <div class="gallery-image">
                   <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-4.jpg"
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-126.jpg"
                     alt="Image 2"
                   />
                 </div>
+                <div class="gallery-image">
+                  <img
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-128.jpg"
+                    alt="Image 2"
+                  />
+                </div>
+                <div class="gallery-image">
+                  <img
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-132.jpg"
+                    alt="Image 2"
+                    1
+                  />
+                </div>
+                <div class="gallery-image">
+                  <img
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-139.jpg"
+                    alt="Image 2"
+                  />
+                </div>
+                <div class="gallery-image">
+                  <img
+                    src="Gallery/Brit/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-16.jpg"
+                    alt="Image 2"
+                  />
+                </div>
+                <a
+                  href="https://aucampus-my.sharepoint.com/:f:/r/personal/arm-yclub_ashesi_edu_gh/Documents/ARM%20E(3)NGAGE%20Ecosystem%20Event?csf=1&web=1&e=ohvOOg"
+                  class="galleryMore"
+                  >View More</a
+                >
               </div>
             </div>
 
-            <div class="year">
-              <h2>2022</h2>
-
-              <div class="event">
-                <h3>Event 3</h3>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-5.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-6.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-16.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-8.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-              </div>
-
-              <div class="event">
-                <h3>Event 4</h3>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-9.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-10.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-11.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-                <div class="gallery-image">
-                  <img
-                    src="Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-12.jpg"
-                    alt="Image 2"
-                  />
-                </div>
-              </div>
-            </div>
+            <div class="year"></div>
           </div>
 
           <div class="preview-modal">
@@ -409,9 +427,9 @@
 
       // Array of all available images
       const images = [
-        "Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-120.jpg",
-        "Gallery/ARM E(3)NGAGE Ecosystem Connect @British Council Accra-110.jpg",
-        "Gallery/Army-188.jpg",
+        "Gallery/Featured/Feature1.jpg",
+        "Gallery/Featured/Feature2.jpg",
+        "Gallery/Featured/Feature3.jpg",
       ];
 
       // Function to select a random image from the images array
