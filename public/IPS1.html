@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="images/tentativeFavicon.png" />
-    <title>IPS1</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" />
     <script src="js/mobile.js" type="text/javascript"></script>
   </head>
@@ -54,8 +54,11 @@
 
               <ul class="primary">
                 <li>
-                  <a href="squad.html" style="font-size: 12px">Meet the team</a>
-                  <a href="learn.html" style="font-size: 12px">Learn</a>
+                  <a href="learn.html" style="font-size: 12px">Learn</a
+                  ><a href="squad.html" style="font-size: 12px"
+                    >Meet the team</a
+                  >
+
                   <a href="gallery.html" style="font-size: 12px">Gallery</a>
                 </li>
               </ul>
@@ -65,56 +68,613 @@
             </li>
           </ul>
         </div>
+        <style>
+          .flexiG {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+          }
+          .vehicleCreation {
+            font-family: Arial;
+            font-size: 14px;
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            color: white;
+            padding-left: 10%;
+          }
+          @media only screen and (max-width: 918px) {
+            .flexiG {
+              display: flex;
+              flex-direction: column;
+            }
+            .vehicleCreation {
+              padding-top: 10px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              padding-bottom: 10px;
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              color: white;
+            }
+          }
+        </style>
       </div>
       <div id="body">
         <div class="header">
           <div>
-            <h1>Intelligent Parking System I</h1>
-            <img src="images/moon-landing.jpg" alt="" />
-            <h2>Outline</h2>
-            <p>
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content #Edwin:
-              To add content #Edwin: To add content #Edwin: To add content
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content
+            <h1 style="margin-top: 0; margin-bottom: 0">
+              Automated Parking System
+            </h1>
+            <!-- <img src="images/moon-landing.jpg" alt="" /> -->
+            <h2>[Project Description]</h2>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Introduction</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Parking systems have a long history following the invention of
+              vehicular transportation. Interestingly, some airports and parking
+              garages have introduced robot valets capable of parking your car
+              for you [1]. All you need to do is drop off your car at a
+              designated spot, and the robot handles the rest! These innovations
+              in automated parking systems have led to increased parking
+              efficiency, optimized space utilization, and reduced traffic
+              congestion.
             </p>
-            <p>
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content #Edwin:
-              To add content #Edwin: To add content #Edwin: To add content
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              In this project, your team will have the opportunity to build your
+              own automated parking system using tools available within the ARM
+              community while showcasing your problem-solving and creative
+              thinking skills. With this parking system, you will construct a
+              functional autonomous vehicle on a pre-designed chassis that you
+              will program to park perpendicularly into a parking space.
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>How it works</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              A parking course setup would be provided, as is depicted below:
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              <img
+                src="images/IPS1/aps-course-setup.jpg"
+                alt="aps-course-setup.jpg"
+              />
+            </p>
+            <p style="padding: 0; text-align: left">
+              The vehicle is placed at (1) and is required to navigate from that
+              start point through the path denoted by (2). Upon reaching the (3)
+              junction, the vehicle is required to park in any of the spaces
+              denoted (4), (5), or (6) in a perpendicular fashion (i.e.,
+              head-first).
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Here's the catch</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Pseudo-cars would be placed in one or two of the parking spaces -
+              implying that not all the spaces would be available. Thus, your
+              vehicle, using sensors, would have to determine which parking
+              space is free before proceeding to park in that space.
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Pre-design chassis</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              As mentioned, you will be provided with the parts of a
+              pre-designed vehicle chassis on which to develop the mechanisms
+              necessary to address this challenge. [2]
+            </p>
+            <span class="flexiG">
+              <img
+                src="images/IPS1/chassis-parts.jpg"
+                alt="chassis-parts.jpg"
+              />
+              <img
+                src="images/IPS1/aps-chassis-parts-first-assembly.jpg"
+                alt="aps-chassis-parts-first-assembly.jpg"
+              />
+            </span>
+
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              As displayed above, the parts of this chassis are:
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 5px; text-align: left">
+              1. 2x Wheels
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 5px; text-align: left">
+              2. 2x DC Motors in MicroServo shape [3]
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 5px; text-align: left">
+              3. Support Wheel
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 5px; text-align: left">
+              4. Metal Chassis
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 5px; text-align: left">
+              5. Top Metal Plate with mounting hardware
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Creating the vehicle</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              In addition to the parts above, you will be provided:
+            </p>
+            <p style="color: #f0bb00; text-align: left; margin-bottom: 5px">
+              1. Arduino Nano RP 2040 Connect [4]
+            </p>
+
+            <span class="vehicleCreation">
+              <img
+                src="images/IPS1/arduino-nano-2040-connect.png"
+                alt="arduino-nano-2040-connect.png"
+              />
+              A Raspberry Pi 2040 board made to fit the Arduino Nano form factor
+              making it a small board with big features. This will serve as the
+              project’s microcontroller.
+            </span>
+            <p style="color: #f0bb00; text-align: left; margin-bottom: 5px">
+              2. DC+Stepper Motor HAT [5]
+            </p>
+
+            <span class="vehicleCreation">
+              <img
+                src="images/IPS1/aps-dc-motor-hat.jpg"
+                alt="aps-dc-motor-hat.jpg"
+              />
+              Since the microcontroller has limited PWM pins, we use a
+              fully-dedicated PWM driver chip to both control motor direction
+              and speed over I2C. You will use this to drive the two DC motors
+              you are provided with.
+            </span>
+
+            <p style="color: #f0bb00; text-align: left; margin-bottom: 5px">
+              3. 4 x AA Battery Holder with On/Off Switch [6]
+            </p>
+
+            <span class="vehicleCreation">
+              <img
+                src="images/IPS1/aps-aa-battery-holder.jpg"
+                alt="aps-aa-battery-holder.jpg"
+              />
+              A nice portable battery holder for the rechargeable AA batteries
+              that will power the DC motors. You will be provided 4x AA
+              batteries along with their charger.
+            </span>
+
+            <p style="color: #f0bb00; text-align: left; margin-bottom: 5px">
+              4. USB Battery Pack - 5V 1A Output [7]
+            </p>
+
+            <span class="vehicleCreation">
+              <img
+                src="images/IPS1/aps-usb-battery-pack.jpg"
+                alt="aps-usb-battery-pack.jpg"
+              />
+              A smaller-sized rechargeable battery pack for the Raspberry Pi
+              containing a 2200mAh lithium-ion battery. You will use it to
+              provide power to the Pi portably. It comes with a microUSB
+              connector which you would use to charge the battery pack.
+            </span>
+
+            <p style="color: #f0bb00; text-align: left; margin-bottom: 5px">
+              5. 3x Ultrasonic Sensors [8]
+            </p>
+
+            <span class="vehicleCreation">
+              <img
+                src="images/IPS1/arduino-nano-ultrasonic-sensor.png"
+                alt="arduino-nano-ultrasonic-sensor.png"
+              />
+              Remember the sensory detection spoken of earlier? You would be
+              provided with three (3) ultrasonic sensors to this effect. You are
+              free to mount them in whatever way would aid your creative
+              process.
+            </span>
+
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              For inspiration on how to put all of this together, follow the
+              relevant steps of this
+              <a
+                style="color: #777777"
+                href="https://learn.adafruit.com/simple-raspberry-pi-robot/assembly"
+                >assembly</a
+              >. With minor differences due to variation in the board used and
+              absence of ultrasonic sensors, you may end up with:
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              <img
+                src="images/IPS1//aps-completed-mech-build.jpg"
+                alt="aps-completed-mech-build.jpg"
+              />
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Ready for action! (or for parking : )
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Thinking about software</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Believe you me, the build is the easiest part. Now, you have to
+              think about basic code and algorithms to establish the rudimentary
+              motion of the robot and eventually tackle the parking problem!
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Owing to the uniqueness of the board being used, you can write
+              your code in either Python or Arduino C. For the Pythonistas,
+              included in the
+              <a
+                style="color: #777777"
+                href="https://github.com/adafruit/Adafruit_CircuitPython_MotorKit"
+                >Adafruit_CircuitPython_MotorKit</a
+              >
+              are library examples of basic scripts to move the robot. However,
+              be sure to have followed the
+              <a
+                style="color: #777777"
+                href="https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/installing-software"
+                >motor Hat guide software installation</a
+              >.
+            </p>
+
+            <p style="color: #f0bb00; text-align: left"></p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>Measuring Success</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              Project success would be measured on the following criteria:
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              1. <strong>Valid parking</strong>: Your vehicle should park fitted
+              within the parking space, and not partially, or awkwardly so.
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              2. <strong>Time taken to park</strong>: Your vehicle park should
+              park in reasonable time and not take lightyears to do so.
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              3. <strong>Efficiency of locomotion</strong>: Your vehicle should
+              generally move smoothly, regulate its speed, and turn gracefully.
+              (Remember: it’s your code behind the wheel ; )
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              4. <strong>Obstacle avoidance</strong>: It must say on its path,
+              not constantly hitting walls and other [pseudo] vehicles.
+            </p>
+            <h2
+              style="text-align: left; padding-top: 10px; padding-bottom: 10px"
+            >
+              <strong>References</strong>
+            </h2>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              1. A. K. Nayak, H. C. Akash and G. Prakash, "Robotic Valet Parking
+              System," 2013 Texas Instruments India Educators' Conference,
+              Bangalore, India, 2013, pp. 311-315, doi: 10.1109/TIIEC.2013.62.
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              2.
+              <a
+                style="color: #777777"
+                href="https://www.adafruit.com/product/2939"
+                >Mini Robot Rover Chassis Kit - 2WD with DC Motors : ID 2939 :
+                $24.95 : Adafruit Industries, Unique & fun DIY electronics and
+                kits</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              3.
+              <a
+                style="color: #777777"
+                href="https://www.adafruit.com/product/2941"
+                >DC Motor in Micro Servo Body : ID 2941 : $3.50 : Adafruit
+                Industries, Unique & fun DIY electronics and kits</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              4.
+              <a
+                style="color: #777777"
+                href="https://store.arduino.cc/products/arduino-nano-rp2040-connect-with-headers?pr_prod_strat=use_description&amp;pr_rec_id=ac7c1c0d6&amp;pr_rec_pid=6830696136855&amp;pr_ref_pid=6830695612567&amp;pr_seq=uniform"
+                >Arduino Nano RP2040 Connect with headers — Arduino Official
+                Store</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              5.
+              <a
+                style="color: #777777"
+                href="https://www.adafruit.com/product/2348"
+                >Adafruit DC & Stepper Motor HAT for Raspberry Pi - Mini Kit :
+                ID 2348 : $22.50 : Adafruit Industries, Unique & fun DIY
+                electronics and kits</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              6.
+              <a
+                style="color: #777777"
+                href="https://www.adafruit.com/product/830"
+                >4 x AA Battery Holder with On/Off Switch : ID 830 : $2.95 :
+                Adafruit Industries, Unique & fun DIY electronics and kits</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              7.
+              <a
+                style="color: #777777"
+                style="color: #777777"
+                href="https://www.adafruit.com/product/1959"
+                >USB Battery Pack - 2200 mAh Capacity - 5V 1A Output : ID 1959 :
+                $14.95 : Adafruit Industries, Unique & fun DIY electronics and
+                kits</a
+              >
+            </p>
+            <p
+              style="
+                padding-top: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+              "
+            >
+              8.
+              <a
+                style="color: #777777"
+                href="https://www.electrorules.com/complete-guide-arduino-and-hc-sr04-ultrasonic-sensor/"
+                >Complete Guide on Arduino & HC-SR04 Ultrasonic sensor |
+                ElectroRules</a
+              >
             </p>
           </div>
         </div>
       </div>
       <div id="footer">
-        <div class="connect">
+        <!-- <div class="connect">
           <div>
             <h1>FOLLOW OUR mission ON</h1>
             <div>
-              <a
+                            <a
+                style="color: #777777"
                 href="http://Must_change_ _update.com/go/facebook/"
                 class="facebook"
                 >facebook</a
               >
-              <a
+                            <a
+                style="color: #777777"
                 href="http://Must_change_ _update.com/go/twitter/"
                 class="twitter"
                 >twitter</a
               >
-              <!-- <a href="http://Must_change_ _update.com/go/googleplus/" class="googleplus">googleplus</a> -->
-              <a href="http://pinterest.com/fwtemplates/" class="pinterest"
+                            <a
+                style="color: #777777" href="http://pinterest.com/fwtemplates/" class="pinterest"
                 >pinterest</a
               >
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="footnote">
           <div>
             <p>&copy; ARM-Y | 2023</p>

@@ -55,8 +55,11 @@
 
               <ul class="primary">
                 <li>
-                  <a href="squad.html" style="font-size: 12px">Meet the team</a>
-                  <a href="learn.html" style="font-size: 12px">Learn</a>
+                  <a href="learn.html" style="font-size: 12px">Learn</a
+                  ><a href="squad.html" style="font-size: 12px"
+                    >Meet the team</a
+                  >
+
                   <a href="gallery.html" style="font-size: 12px">Gallery</a>
                 </li>
               </ul>
@@ -76,7 +79,7 @@
               Ashesi University!
             </h2>
             <p>
-              Established in 2022, our clubs has a unique role: to foster a
+              Established in 2022, our club has a unique role: to foster a
               community of students from diverse disciplines who share a common
               passion for technology and innovation. We are proud to be
               affiliated with the larger Advanced RISC Machines (ARM)
@@ -89,7 +92,20 @@
         </div>
         <div class="body">
           <div>
-            <img src="images/Generated3.png" style="border: 3%" alt="" />
+            <img
+              src="images/Generated3.png"
+              id="hiddenImage"
+              style="border: 3%; display: none"
+              alt=""
+            />
+
+            <img
+              src="images/Generated3a.png"
+              id="hiddenImage2"
+              style="border: 3%"
+              alt=""
+            />
+
             <h2>What we do?</h2>
             <p>
               Our club is dedicated to making ARM processors and designs
@@ -104,57 +120,62 @@
               microcontrollers, and opportunities to collaborate on projects. By
               doing so, we hope to inspire the next generation of innovators and
               contribute to the growth of the ARM ecosystem.
+              <button onclick="toggleContent()" id="readMoreButton">
+                Read More
+              </button>
             </p>
 
-            <p>
-              <b style="color: #e8b407"
-                >Some of the key activities and initiatives that our club
-                focuses on include:
-              </b>
-            </p>
+            <span id="expandedContent" style="display: none">
+              <p>
+                <b style="color: #e8b407"
+                  >Some of the key activities and initiatives that our club
+                  focuses on include:
+                </b>
+              </p>
+              <p>
+                &nbsp
+                <b style="color: #e8b407"> • Embedded Learning Challenges:</b>
+                We provide opportunities for our members to learn the
+                fundamentals, take part in various embedded learning challenges,
+                and participate in a programmes that enable students to work
+                together on Arm-based projects and gain practical experience
+                with Arm-based microcontrollers (MCUs) and Field Programmable
+                Gate Arrays (FPGA's).
+                <br />
+                &nbsp
+                <b style="color: #e8b407">
+                  • Aritficial Intelligence, Computer Vision and Machine
+                  Learning including TinyML:
+                </b>
+                We support the application and growth of AI, machine learning,
+                and importantly TinyML in a dynamic environment, realising their
+                enormous potential in a variety of uses and applications. By
+                utilising the thriving TinyML ecosystem, we provide our members
+                with cooperative training programmes and a wealth of knowledge
+                resources. Through these initiatives, we help our members fully
+                realise TinyML's transformative potential, giving them the tools
+                they need to come up with original ideas and have a positive
+                influence on the rapidly evolving AI and machine learning
+                industries.
+                <br />
+                &nbsp
+                <b style="color: #e8b407"> • Internet of things (IOT): </b>
+                Aside from our club's focus on ARM processors and designs, while
+                also acknowledging the transformative potential of the Internet
+                of Things (IoT). Through various activities and initiatives, we
+                empower members to explore IoT's integration with ARM-based
+                systems. We aim to create and implement IoT solutions that
+                enhance user experiences, streamline processes, and drive
+                technological advancements. By emphasizing the
+                interconnectedness of devices and networks, we encourage
+                exploration in areas like smart homes, industrial automation,
+                healthcare, and environmental monitoring. With a focus on
+                security and privacy, we promote robust measures and ethical
+                practices for responsible IoT deployments.
 
-            <p>
-              &nbsp
-              <b style="color: #e8b407"> • Embedded Learning Challenges:</b>
-              We provide opportunities for our members to learn the
-              fundamentals, take part in various embedded learning challenges,
-              and participate in a programmes that enable students to work
-              together on Arm-based projects and gain practical experience with
-              Arm-based microcontrollers (MCUs) and Field Programmable Gate
-              Arrays (FPGA's).
-              <br />
-              &nbsp
-              <b style="color: #e8b407">
-                • Aritficial Intelligence, Computer Vision and Machine Learning
-                including TinyML:
-              </b>
-              We support the application and growth of AI, machine learning, and
-              importantly TinyML in a dynamic environment, realising their
-              enormous potential in a variety of uses and applications. By
-              utilising the thriving TinyML ecosystem, we provide our members
-              with cooperative training programmes and a wealth of knowledge
-              resources. Through these initiatives, we help our members fully
-              realise TinyML's transformative potential, giving them the tools
-              they need to come up with original ideas and have a positive
-              influence on the rapidly evolving AI and machine learning
-              industries.
-              <br />
-              &nbsp
-              <b style="color: #e8b407"> • Internet of things (IOT): </b>
-              Aside from our club's focus on ARM processors and designs, while
-              also acknowledging the transformative potential of the Internet of
-              Things (IoT). Through various activities and initiatives, we
-              empower members to explore IoT's integration with ARM-based
-              systems. We aim to create and implement IoT solutions that enhance
-              user experiences, streamline processes, and drive technological
-              advancements. By emphasizing the interconnectedness of devices and
-              networks, we encourage exploration in areas like smart homes,
-              industrial automation, healthcare, and environmental monitoring.
-              With a focus on security and privacy, we promote robust measures
-              and ethical practices for responsible IoT deployments.
-
-              <br />
-            </p>
+                <br />
+              </p>
+            </span>
           </div>
         </div>
         <div class="footer">
@@ -195,7 +216,7 @@
         </div>
       </div>
       <div id="footer">
-        <div class="connect">
+        <!-- <div class="connect">
           <div>
             <h1>FOLLOW OUR mission ON</h1>
             <div>
@@ -209,7 +230,6 @@
                 class="twitter"
                 >twitter</a
               >
-              <!-- <a href="http://Must_change_ _update.com/go/googleplus/" class="googleplus">googleplus</a> -->
               <a
                 href="http://Must_change_ _update.com/go/pinterest/"
                 class="pinterest"
@@ -217,7 +237,7 @@
               >
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="footnote">
           <div>
             <p>&copy; ARM-Y | 2023</p>
@@ -225,5 +245,35 @@
         </div>
       </div>
     </div>
+    <script>
+      function toggleContent() {
+        const expandedContent = document.getElementById("expandedContent");
+        const readMoreButton = document.getElementById("readMoreButton");
+        const hiddenImage1 = document.getElementById("hiddenImage");
+        const hiddenImage2 = document.getElementById("hiddenImage2");
+
+        if (expandedContent.style.display === "none") {
+          // If the content is currently hidden, show it
+          expandedContent.style.display = "block";
+          hiddenImage.style.display = "block";
+          hiddenImage2.style.display = "none"; // Hide hiddenImage2 when content is shown
+
+          readMoreButton.textContent = "Read Less";
+        } else {
+          // If the content is currently shown, hide it
+          expandedContent.style.display = "none";
+          hiddenImage.style.display = "none"; // Hide hiddenImage when content is hidden
+          hiddenImage2.style.display = "block"; // Show hiddenImage2 when content is hidden
+
+          readMoreButton.textContent = "Read More";
+        }
+      }
+    </script>
+    <style>
+      /* Set one of the images to be displayed initially */
+      #hiddenImage2 {
+        display: none;
+      }
+    </style>
   </body>
 </html>

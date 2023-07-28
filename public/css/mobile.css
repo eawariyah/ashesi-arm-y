@@ -122,7 +122,12 @@
   }
 
   #body.home .header div img.satellite {
-    left: 2px;
+    left: 30px;
+    top: 50px;
+    width: auto;
+    height: 10%;
+
+    /* display: none; */
   }
   #body.home .header div h1 {
     float: none;
@@ -195,6 +200,10 @@
     margin: 0 auto;
     width: 90%;
   }
+  #body.home .footer .videoPlayer {
+    margin: 0 auto;
+    width: 100%;
+  }
   #body.home .footer div ul li a span {
     left: 46%;
     top: 39%;
@@ -244,7 +253,9 @@
   #body .header div .sidebar ul li a img {
     float: none;
     margin: 0 auto;
+    display: none;
   }
+
   #body .header div ul,
   #body .header div .article ul,
   #body .header div .sidebar ul {
@@ -498,5 +509,11 @@
   #header div ul li.menu ul#selected li.selected a {
     color: #eeeced;
     text-decoration: none;
+  }
+  #hiddenImage {
+    display: none;
+  }
+  #hiddenImage2 {
+    display: none;
   }
 }

@@ -584,7 +584,7 @@ img {
 }
 /*----------------------------------------body-styles---------------------------------------*/
 #body.about .header {
-  background: url(../images/bg-about.jpg) no-repeat center top #000000;
+  background: url(../images/bg-abouta.jpg) no-repeat center top #000000;
   margin: 0;
   min-height: 455px;
   padding: 0;
@@ -772,6 +772,7 @@ img {
   min-height: 366px;
   padding: 0;
   width: 100%;
+  display: none;
 }
 #body.about .footer div {
   margin: 0 auto;
@@ -999,6 +1000,19 @@ img {
   font-size: 23px;
   font-weight: normal;
   line-height: 23px;
+  margin: 0 auto;
+  padding: 53px 0 27px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 780px;
+}
+#body .header div h3 {
+  color: #ffc700;
+  display: block;
+  font-family: audiowide-regular-webfont;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 20px;
   margin: 0 auto;
   padding: 53px 0 27px;
   text-align: center;

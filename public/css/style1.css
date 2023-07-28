@@ -14,33 +14,51 @@ body {
   animation-duration: 2s;
   font-family: "audiowide-regular-webfont";
 }
-
-div#mainBody {
-  overflow: hidden;
-  padding: 50px;
-  margin-top: 1.5%;
-  display: inline-block;
-  width: 500px;
-  height: 600px;
-  border-radius: 20px;
-  background-color: rgb(14, 14, 14);
+div.text-center {
+  position: relative;
 }
-
-div#mainBody2 {
-  overflow: hidden;
-  padding: 100px;
-  margin-top: 1%;
-  display: inline-block;
+div#mainBody {
+  /* overflow: hidden; */
+  padding: 41.5px;
+  /* margin-top: 1.5%; */
+  float: left;
+  /* margin-left: 10px; */
   width: 500px;
   height: 600px;
-  background-color: rgb(22, 22, 22);
+  /* border-radius: 20px; */
+  background-color: rgb(14, 14, 14);
+  max-width: 100%;
+  height: auto;
+}
+div#mainBody2 {
+  /* overflow: hidden; */
+  padding: 0px;
+  /* margin-top: 1.5%; */
+  float: left;
+  /* margin-left: 10px; */
+  width: 500px;
+  height: 600px;
+  /* border-radius: 20px; */
+  background-color: rgb(14, 14, 14);
+  max-width: 100%;
+  height: auto;
+}
+img.generated-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  visibility: visible; /* Display the image by default */
 }
 
 h3#createText {
   margin-top: 20px;
   text-align: left;
 }
-
+body {
+  overflow-x: hidden;
+}
 input#firstName {
   color: white;
   padding-left: 20px;
@@ -407,6 +425,23 @@ button:focus {
 
 @media only screen and (max-width: 959px) {
   #logo {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  div#mainBody {
+    padding: 20px;
+  }
+  div#mainBody2 {
+    padding: 20px;
+    display: none;
+  }
+
+  img.generated-image {
     visibility: hidden;
   }
 }
