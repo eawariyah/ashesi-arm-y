@@ -50,7 +50,9 @@ h3#createText {
   margin-top: 20px;
   text-align: left;
 }
-
+body {
+  overflow-x: hidden;
+}
 input#username {
   color: white;
   padding-left: 20px;
