@@ -99,6 +99,11 @@
         "type": 301
       },
       {
+        "source": "myTurnViewer.html{,/**}",
+        "destination": "/myTurnViewer",
+        "type": 301
+      },
+      {
         "source": "squad.html{,/**}",
         "destination": "/squad",
         "type": 301

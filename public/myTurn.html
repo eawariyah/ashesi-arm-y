@@ -9,9 +9,26 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/mobile.css" />
     <script src="js/mobile.js" type="text/javascript"></script>
-  </head>
-  <body>
     <style>
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #002b49;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        /* Add any animation or transition effects here if desired */
+      }
       .collapsible {
         color: white;
         width: 100%;
@@ -287,6 +304,91 @@
         outline: 0;
       }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Add the Firebase JavaScript SDK script tag here -->
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
+        authDomain: "ashesi-arm-y.firebaseapp.com",
+        projectId: "ashesi-arm-y",
+        storageBucket: "ashesi-arm-y.appspot.com",
+        messagingSenderId: "1069096083638",
+        appId: "1:1069096083638:web:617337365051f947600617",
+        measurementId: "G-F40BZM1WQ9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      const db = firebase.firestore();
+
+      // Function to handle form submission
+      function signUp(event) {
+        event.preventDefault();
+
+        // Get form values inside the signUp function
+        const projectName = document.getElementById("projectName").value;
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const phone = document.getElementById("phone").value;
+        const teamStatus = document.getElementById("teamStatus").value;
+        const teamMembers = document.getElementById("teamMembers").value;
+        const projectDescription =
+          document.getElementById("projectDescription").value;
+        const targetUsers = document.getElementById("targetUsers").value;
+        const developmentStatus =
+          document.getElementById("developmentStatus").value;
+
+        // Create a user object
+        const user = {
+          projectName,
+          firstName,
+          lastName,
+          phone,
+          teamStatus,
+          teamMembers,
+          projectDescription,
+          targetUsers,
+          developmentStatus,
+        };
+
+        // Save user details to Firestore
+        db.collection("myTurn")
+          .add(user)
+          .then(() => {
+            // Show the snackbar with the success message
+            showSnackbar("Project submitted successfully!");
+
+            // Optionally, clear the form fields after submission
+            document.getElementById("projectName").value = "";
+            document.getElementById("firstName").value = "";
+            document.getElementById("lastName").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("teamStatus").value = "";
+            document.getElementById("teamMembers").value = "";
+            document.getElementById("projectDescription").value = "";
+            document.getElementById("targetUsers").value = "";
+            document.getElementById("developmentStatus").value = "";
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+      }
+      // Function to show the snackbar
+      function showSnackbar(message) {
+        const snackbar = document.getElementById("snackbar");
+        snackbar.textContent = message;
+        snackbar.classList.add("show");
+        setTimeout(() => {
+          snackbar.classList.remove("show");
+        }, 3000); // Snackbar will be hidden after 3 seconds (adjust the time as needed)
+      }
+    </script>
+  </head>
+  <body>
+    <div id="snackbar"></div>
+
     <div id="page">
       <div id="header">
         <div>
@@ -404,7 +506,7 @@
                     type="projectName"
                     id="projectName"
                     name="projectName"
-                    placeholder="Project Name"
+                    placeholder="PROJECT NAME"
                     required
                     style="
                       color: white;
@@ -416,6 +518,7 @@
                       background-color: rgb(20, 20, 20);
                       border: 0;
                       border-radius: 5px;
+                      text-transform: none;
                     "
                   />
                 </div>
@@ -432,7 +535,7 @@
                     type="text"
                     id="firstName"
                     name="username"
-                    placeholder="First Name"
+                    placeholder="FIRST NAME"
                     style="
                       align-items: flex-start;
                       width: 45%;
@@ -444,6 +547,7 @@
                       background-color: rgb(20, 20, 20);
                       border: 0;
                       border-radius: 5px;
+                      text-transform: none;
                     "
                     required
                   />
@@ -451,7 +555,7 @@
                     type="text"
                     id="lastName"
                     name="username"
-                    placeholder="Last Name"
+                    placeholder="LAST NAME"
                     style="
                       align-items: flex-end;
                       width: 45%;
@@ -463,6 +567,7 @@
                       background-color: rgb(20, 20, 20);
                       border: 0;
                       border-radius: 5px;
+                      text-transform: none;
                     "
                     required
                   />
@@ -472,7 +577,7 @@
                     type="list"
                     id="phone"
                     name="phone"
-                    placeholder="Phone Number"
+                    placeholder="PHONE NUMBER"
                     required
                     style="
                       color: white;
@@ -484,6 +589,7 @@
                       background-color: rgb(20, 20, 20);
                       border: 0;
                       border-radius: 5px;
+                      text-transform: none;
                     "
                   />
                 </div>
@@ -502,11 +608,12 @@
                       border: 0;
                       border-radius: 5px;
                       margin-bottom: 10%;
+                      font-size: 18px;
                     "
                     required
                   >
                     <option value="" disabled selected hidden>
-                      Are you applying as a team?
+                      ARE YOU APPLYING AS A TEAM?
                     </option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
@@ -531,9 +638,13 @@
                   class="teamMembers"
                   name="teamMembers"
                   placeholder="Ensure team member(s) has/have an account"
-                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  style="
+                    width: 95.5%;
+                    height: 118px;
+                    font-size: 10px;
+                    text-transform: none;
+                  "
                   data-component="textarea"
-                  required=""
                 ></textarea>
               </div>
 
@@ -561,10 +672,15 @@
                   an ARM based microcontroller or architecture?
                 </p>
                 <textarea
-                  id="teamMembers"
+                  id="projectDescription"
                   class="teamMembers"
                   name="teamMembers"
-                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  style="
+                    width: 95.5%;
+                    height: 118px;
+                    font-size: 10px;
+                    text-transform: none;
+                  "
                   data-component="textarea"
                   required
                 ></textarea>
@@ -583,16 +699,21 @@
                   Who are your current / potential users and customers?
                 </p>
                 <textarea
-                  id="teamMembers"
+                  id="targetUsers"
                   class="teamMembers"
                   name="teamMembers"
-                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  style="
+                    width: 95.5%;
+                    height: 118px;
+                    font-size: 10px;
+                    text-transform: none;
+                  "
                   data-component="textarea"
                   required
                 ></textarea>
                 <div class="form-group" style="padding: 0">
                   <select
-                    id="projectStatus"
+                    id="developmentStatus"
                     style="
                       color: white;
                       padding-left: 20px;
@@ -604,6 +725,7 @@
                       border: 0;
                       border-radius: 5px;
                       margin-bottom: 10%;
+                      font-size: 18px;
                     "
                     name="projectStatus"
                     required
@@ -630,8 +752,8 @@
                     padding-top: 5%;
                   "
                 >
-                  Please, supply images, renders, or technical drawings of your
-                  project to support your submission. (max 10)
+                  Optionally, supply images, renders, or technical drawings of
+                  your project to support your submission. (max 10)
                 </p>
                 <div style="padding: 0">
                   <input

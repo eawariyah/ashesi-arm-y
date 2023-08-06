@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View My Turn Content</title>
+    <link rel="icon" href="images/tentativeFavicon.png" />
+
+    <!-- Add the Firebase JavaScript SDK script tags here -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <h1>Participants</h1>
+    <div id="content"></div>
+
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCMJ1PumFhOQmvl3thUAHG5ddKOCTD3rxo",
+        authDomain: "ashesi-arm-y.firebaseapp.com",
+        projectId: "ashesi-arm-y",
+        storageBucket: "ashesi-arm-y.appspot.com",
+        messagingSenderId: "1069096083638",
+        appId: "1:1069096083638:web:617337365051f947600617",
+        measurementId: "G-F40BZM1WQ9",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the Firestore database
+      const db = firebase.firestore();
+
+      // Function to display the content from the database
+      function displayContent() {
+        // Get the 'myTurn' collection from Firestore
+        db.collection("myTurn")
+          .get()
+          .then((querySnapshot) => {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = ""; // Clear previous content
+
+            // Loop through the documents in the collection
+            querySnapshot.forEach((doc) => {
+              // Access the data from each document
+              const data = doc.data();
+
+              // Create a new div element to display the data
+              const entryDiv = document.createElement("div");
+              entryDiv.innerHTML = `
+                            <p><strong>Project Name:</strong> ${data.projectName}</p>
+                            <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+                            <p><strong>Phone:</strong> ${data.phone}</p>
+                            <p><strong>Team Status:</strong> ${data.teamStatus}</p>
+                            <p><strong>Team Members:</strong> ${data.teamMembers}</p>
+                            <p><strong>Project Description:</strong> ${data.projectDescription}</p>
+                            <p><strong>Target Users:</strong> ${data.targetUsers}</p>
+                            <p><strong>Development Status:</strong> ${data.developmentStatus}</p>
+                            <hr>
+                        `;
+
+              // Append the new entry to the contentDiv
+              contentDiv.appendChild(entryDiv);
+            });
+          })
+          .catch((error) => {
+            console.error("Error getting documents: ", error);
+          });
+      }
+
+      // Call the displayContent function when the page loads
+      window.onload = displayContent;
+    </script>
+  </body>
+</html>
