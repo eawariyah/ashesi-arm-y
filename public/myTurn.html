@@ -384,6 +384,18 @@
           snackbar.classList.remove("show");
         }, 3000); // Snackbar will be hidden after 3 seconds (adjust the time as needed)
       }
+      function toggleTeamMembersTextarea() {
+        const teamStatusSelect = document.getElementById("teamStatus");
+        const teamMembersContainer = document.getElementById(
+          "teamMembersContainer"
+        );
+
+        if (teamStatusSelect.value === "Yes") {
+          teamMembersContainer.style.display = "block";
+        } else {
+          teamMembersContainer.style.display = "none";
+        }
+      }
     </script>
   </head>
   <body>
@@ -452,7 +464,7 @@
           <div>
             <!-- <h1>My Turn</h1> -->
             <h1 style="margin: -30px auto 40px">Welcome to My Turn</h1>
-            <img src="images/myTurn.png" alt="" />
+            <img src="images/myTurnNew.png" alt="" />
             <h2>Make your Ideas a Reality!</h2>
             <p>
               Are you a student with a passion for robotics, embedded systems,
@@ -611,6 +623,7 @@
                       font-size: 18px;
                     "
                     required
+                    onchange="toggleTeamMembersTextarea()"
                   >
                     <option value="" disabled selected hidden>
                       ARE YOU APPLYING AS A TEAM?
@@ -619,33 +632,35 @@
                     <option value="No">No</option>
                   </select>
                 </div>
-                <p
-                  style="
-                    color: white;
-                    margin-bottom: 0px;
-                    width: 100%;
-                    height: 45px;
-                    background-color: rgb(20, 20, 20);
-                    border: 0;
-                    border-radius: 5px;
-                    padding-top: 5%;
-                  "
-                >
-                  Enter team members names or leave blank if none
-                </p>
-                <textarea
-                  id="teamMembers"
-                  class="teamMembers"
-                  name="teamMembers"
-                  placeholder="Ensure team member(s) has/have an account"
-                  style="
-                    width: 95.5%;
-                    height: 118px;
-                    font-size: 10px;
-                    text-transform: none;
-                  "
-                  data-component="textarea"
-                ></textarea>
+                <div id="teamMembersContainer" style="display: none">
+                  <p
+                    style="
+                      color: white;
+                      margin-bottom: 0px;
+                      width: 100%;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                      padding-top: 5%;
+                    "
+                  >
+                    Enter team members names or leave blank if none
+                  </p>
+                  <textarea
+                    id="teamMembers"
+                    class="teamMembers"
+                    name="teamMembers"
+                    placeholder="Ensure team member(s) has/have an account"
+                    style="
+                      width: 95.5%;
+                      height: 118px;
+                      font-size: 10px;
+                      text-transform: none;
+                    "
+                    data-component="textarea"
+                  ></textarea>
+                </div>
               </div>
 
               <h2
@@ -668,8 +683,7 @@
                     padding-top: 5%;
                   "
                 >
-                  What is your project and how does it utilize / could utilized
-                  an ARM based microcontroller or architecture?
+                  Briefly describe your project and elaborate on its concept
                 </p>
                 <textarea
                   id="projectDescription"
@@ -696,7 +710,7 @@
                     padding-top: 5%;
                   "
                 >
-                  Who are your current / potential users and customers?
+                  Who are your current / potential users and customers if any?
                 </p>
                 <textarea
                   id="targetUsers"
@@ -734,10 +748,12 @@
                       What stage of development is your project in?
                     </option>
                     <option value="stage1">
-                      Project initiation and stratagy development
+                      Planning and strategy development stage
                     </option>
-                    <option value="stage2">Execution and Testing</option>
-                    <option value="stage3">Running</option>
+                    <option value="stage2">Design and prototyping stage</option>
+                    <option value="stage3">
+                      Construction or implementation stage
+                    </option>
                   </select>
                 </div>
                 <p
