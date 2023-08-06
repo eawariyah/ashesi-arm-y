@@ -54,7 +54,7 @@
                 localStorage.setItem("loggedIn", "true");
 
                 // Redirect to index.html if the user is found
-                window.location.href = "index1.html";
+                window.location.href = "home_index.html";
               } else {
                 // Show an error message if the user is not found or the credentials don't match
                 alert("Invalid email or pin. Please try again.");
@@ -76,7 +76,7 @@
 
         if (loggedIn === "true" || cookieValue === "loggedIn=true") {
           // Redirect to index.html if the user is already logged in
-          window.location.href = "index1.html";
+          window.location.href = "home_index.html";
         }
       });
     </script>

@@ -11,15 +11,291 @@
     <script src="js/mobile.js" type="text/javascript"></script>
   </head>
   <body>
+    <style>
+      .collapsible {
+        color: white;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+        padding-top: 5%;
+        cursor: pointer;
+      }
+
+      .content {
+        display: none;
+      }
+      input#projectName {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#projectName:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#projectName:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#projectName:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#major {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#major:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#major:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#major:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#yearGroup {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#yearGroup:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#yearGroup:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#yearGroup:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#gender {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#gender:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#gender:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#gender:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#phone {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#phone:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#phone:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#phone:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#firstName {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#firstName:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#firstName:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#firstName:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#lastName {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#lastName:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#lastName:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#lastName:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      input#pin {
+        color: white;
+        padding-left: 20px;
+        margin-top: 20px;
+        float: center;
+        width: 100%;
+        height: 45px;
+        background-color: rgb(20, 20, 20);
+        border: 0;
+        border-radius: 5px;
+      }
+
+      input#pin:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      input#pin:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      input#pin:focus {
+        outline: 0;
+        padding-left: 30px;
+        transform: scale(1.1);
+        border: 2px solid #f6d452;
+      }
+
+      button {
+        margin-top: 30px;
+        width: 250px;
+        height: 40px;
+        color: white;
+        background-color: #002b49;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
+        background-color: #333e48;
+      }
+
+      button:not(:hover) {
+        transition: 0.5s;
+        transform: scale(1);
+      }
+
+      button:focus {
+        background-color: #f6d452;
+        transition: 0.5s;
+        transform: scale(1.2);
+        border: 0;
+        outline: 0;
+      }
+    </style>
     <div id="page">
       <div id="header">
         <div>
-          <a href="index1.html" class="logo"
+          <a href="home_index.html" class="logo"
             ><img src="images/tentative.png" alt=""
           /></a>
           <ul id="navigation">
             <li class="selected">
-              <a href="index1.html">Home</a>
+              <a href="home_index.html">Home</a>
             </li>
             <li>
               <a href="about.html">About</a>
@@ -28,8 +304,8 @@
               <a href="projects.html">Projects</a>
               <ul class="primary">
                 <li>
-                  <a href="IPS1.html" style="font-size: 12px">IPS1 1</a>
-                  <a href="IPS2.html" style="font-size: 12px">IPS1 2</a>
+                  <a href="APS.html" style="font-size: 12px">APS</a>
+                  <a href="IPS.html" style="font-size: 12px">IPS</a>
                   <a href="myTurn.html" style="font-size: 12px">My Turn</a>
                 </li>
               </ul>
@@ -72,27 +348,305 @@
       <div id="body">
         <div class="header">
           <div>
-            <h1>My Turn</h1>
-            <img src="images/moon-landing.jpg" alt="" />
-            <h2>Outline</h2>
+            <!-- <h1>My Turn</h1> -->
+            <h1 style="margin: -30px auto 40px">Welcome to My Turn</h1>
+            <img src="images/myTurn.png" alt="" />
+            <h2>Make your Ideas a Reality!</h2>
             <p>
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content #Edwin:
-              To add content #Edwin: To add content #Edwin: To add content
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content
+              Are you a student with a passion for robotics, embedded systems,
+              Artificial Intelligence, Computer Vision, Machine Learning,
+              TinyML, or IoT? Have you ever had a crazy, innovative idea that
+              you believe could change the world? Look no further! Our
+              student-led community platform is the perfect place to share your
+              wildest tech dreams and collaborate with like-minded individuals
+              to make them come true.
             </p>
             <p>
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content #Edwin:
-              To add content #Edwin: To add content #Edwin: To add content
-              #Edwin: To add content #Edwin: To add content #Edwin: To add
-              content #Edwin: To add content #Edwin: To add content #Edwin: To
-              add content #Edwin: To add content #Edwin: To add content
+              Here at Arm-y, we believe that every idea, no matter how
+              audacious, deserves a chance to be heard and explored. Our mission
+              is to foster creativity, learning, and innovation by providing a
+              supportive space where you can discuss your ideas freely and
+              receive valuable feedback from experienced mentors and fellow
+              enthusiasts.
             </p>
+            <p>
+              Our vibrant community is filled with aspiring engineers,
+              developers, and visionaries who are ready to join hands and bring
+              revolutionary projects to life. Whether you're a seasoned tech
+              wizard or just starting your journey, everyone is welcome! All you
+              need is a curious mind and a burning desire to create something
+              extraordinary.
+            </p>
+            <p>
+              Ready to get started? Click on the "About You" and "Your Project"
+              buttons below to share your details and introduce your
+              groundbreaking idea to the world. Our dedicated team will review
+              your submission and guide you through the exciting journey of
+              transforming your dream into a reality.
+            </p>
+            <p>
+              Don't let your ideas stay confined to your imagination; join the
+              my turn program today, and together, let's shape the future of
+              technology! 💡🌟
+            </p>
+
+            <form class="signup-form" onsubmit="signUp(event)">
+              <h2
+                class="collapsible"
+                style="width: 100%; padding: 20px 0 0px; margin-bottom: 10px"
+                onclick="toggleSection('aboutYou')"
+              >
+                About you
+              </h2>
+              <div class="content" id="aboutYou">
+                <div class="form-group" style="padding: 0">
+                  <input
+                    type="projectName"
+                    id="projectName"
+                    name="projectName"
+                    placeholder="Project Name"
+                    required
+                    style="
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      width: 100%;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                    "
+                  />
+                </div>
+                <div
+                  class="nameGroup"
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5%;
+                    padding: 0;
+                  "
+                >
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="username"
+                    placeholder="First Name"
+                    style="
+                      align-items: flex-start;
+                      width: 45%;
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                    "
+                    required
+                  />
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="username"
+                    placeholder="Last Name"
+                    style="
+                      align-items: flex-end;
+                      width: 45%;
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                    "
+                    required
+                  />
+                </div>
+                <div class="form-group" style="padding: 0">
+                  <input
+                    type="list"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                    style="
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      width: 100%;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                    "
+                  />
+                </div>
+                <div class="form-group" style="padding: 0">
+                  <select
+                    id="teamStatus"
+                    name="teamStatus"
+                    style="
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      width: 100%;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                      margin-bottom: 10%;
+                    "
+                    required
+                  >
+                    <option value="" disabled selected hidden>
+                      Are you applying as a team?
+                    </option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <p
+                  style="
+                    color: white;
+                    margin-bottom: 0px;
+                    width: 100%;
+                    height: 45px;
+                    background-color: rgb(20, 20, 20);
+                    border: 0;
+                    border-radius: 5px;
+                    padding-top: 5%;
+                  "
+                >
+                  Enter team members names or leave blank if none
+                </p>
+                <textarea
+                  id="teamMembers"
+                  class="teamMembers"
+                  name="teamMembers"
+                  placeholder="Ensure team member(s) has/have an account"
+                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  data-component="textarea"
+                  required=""
+                ></textarea>
+              </div>
+
+              <h2
+                class="collapsible"
+                style="width: 100%; padding: 20px 0 0px; margin-bottom: 10px"
+                onclick="toggleSection('yourProject')"
+              >
+                Your Project
+              </h2>
+              <div class="content" id="yourProject">
+                <p
+                  style="
+                    color: white;
+                    margin-bottom: 0px;
+                    width: 100%;
+                    height: 45px;
+                    background-color: rgb(20, 20, 20);
+                    border: 0;
+                    border-radius: 5px;
+                    padding-top: 5%;
+                  "
+                >
+                  What is your project and how does it utilize / could utilized
+                  an ARM based microcontroller or architecture?
+                </p>
+                <textarea
+                  id="teamMembers"
+                  class="teamMembers"
+                  name="teamMembers"
+                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  data-component="textarea"
+                  required
+                ></textarea>
+                <p
+                  style="
+                    color: white;
+                    margin-bottom: 0px;
+                    width: 100%;
+                    height: 45px;
+                    background-color: rgb(20, 20, 20);
+                    border: 0;
+                    border-radius: 5px;
+                    padding-top: 5%;
+                  "
+                >
+                  Who are your current / potential users and customers?
+                </p>
+                <textarea
+                  id="teamMembers"
+                  class="teamMembers"
+                  name="teamMembers"
+                  style="width: 95.5%; height: 118px; font-size: 10px"
+                  data-component="textarea"
+                  required
+                ></textarea>
+                <div class="form-group" style="padding: 0">
+                  <select
+                    id="projectStatus"
+                    style="
+                      color: white;
+                      padding-left: 20px;
+                      margin-top: 20px;
+                      float: center;
+                      width: 100%;
+                      height: 45px;
+                      background-color: rgb(20, 20, 20);
+                      border: 0;
+                      border-radius: 5px;
+                      margin-bottom: 10%;
+                    "
+                    name="projectStatus"
+                    required
+                  >
+                    <option value="" disabled selected hidden>
+                      What stage of development is your project in?
+                    </option>
+                    <option value="stage1">
+                      Project initiation and stratagy development
+                    </option>
+                    <option value="stage2">Execution and Testing</option>
+                    <option value="stage3">Running</option>
+                  </select>
+                </div>
+                <p
+                  style="
+                    color: white;
+                    margin-bottom: 0px;
+                    width: 100%;
+                    height: 45px;
+                    background-color: rgb(20, 20, 20);
+                    border: 0;
+                    border-radius: 5px;
+                    padding-top: 5%;
+                  "
+                >
+                  Please, supply images, renders, or technical drawings of your
+                  project to support your submission. (max 10)
+                </p>
+                <div style="padding: 0">
+                  <input
+                    multiple="multiple"
+                    class="fileUpload"
+                    id="fileUpload"
+                    type="file"
+                    name="fileUpload"
+                    placeholder="Upload"
+                  />
+                </div>
+              </div>
+
+              <button style="width: 100%" type="submit">Finish</button>
+            </form>
           </div>
         </div>
       </div>
@@ -124,5 +678,12 @@
         </div>
       </div>
     </div>
+    <script>
+      function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        section.style.display =
+          section.style.display === "none" ? "block" : "none";
+      }
+    </script>
   </body>
 </html>

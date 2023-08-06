@@ -207,7 +207,7 @@ img {
   position: absolute;
   top: 41px;
   width: auto;
-  z-index: 101;
+  z-index: 99;
   perspective: 800px; /* Adjust the value as per your preference */
   transform-style: preserve-3d;
   transition: transform 0.5s;

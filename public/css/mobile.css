@@ -120,19 +120,21 @@
     width: auto;
     z-index: 50;
   }
-
+  #body.home .header div img.down_arrow {
+    display: none;
+  }
   #body.home .header div img.satellite {
-    left: 30px;
+    left: 28px;
     top: 50px;
     width: auto;
-    height: 10%;
+    height: 5%;
 
     /* display: none; */
   }
   #body.home .header div h1 {
     float: none;
     margin: 0;
-    padding: 30% 0 10%;
+    padding: 9% 0 10%;
     text-align: center;
     width: 100%;
   }

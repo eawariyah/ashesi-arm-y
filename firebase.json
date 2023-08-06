@@ -4,10 +4,105 @@
   },
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "cleanUrls": true,
+
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "home_index.html",
+        "destination": "/home_index",
+        "type": 301
+      },
+      {
+        "source": "about.html{,/**}",
+        "destination": "/about",
+        "type": 301
+      },
+      {
+        "source": "admin.html",
+        "destination": "/admin",
+        "type": 301
+      },
+      {
+        "source": "blog.html{,/**}",
+        "destination": "/blog",
+        "type": 301
+      },
+      {
+        "source": "contact.html{,/**}",
+        "destination": "/contact",
+        "type": 301
+      },
+      {
+        "source": "event1.html{,/**}",
+        "destination": "/event1",
+        "type": 301
+      },
+      {
+        "source": "event2.html{,/**}",
+        "destination": "/event2",
+        "type": 301
+      },
+      {
+        "source": "gallery.html{,/**}",
+        "destination": "/gallery",
+        "type": 301
+      },
+      {
+        "source": "APS.html{,/**}",
+        "destination": "/APS",
+        "type": 301
+      },
+      {
+        "source": "IPS.html{,/**}",
+        "destination": "/IPS",
+        "type": 301
+      },
+      {
+        "source": "learn.html{,/**}",
+        "destination": "/learn",
+        "type": 301
+      },
+      {
+        "source": "learn1.html{,/**}",
+        "destination": "/learn1",
+        "type": 301
+      },
+      {
+        "source": "learn2.html{,/**}",
+        "destination": "/learn2",
+        "type": 301
+      },
+      {
+        "source": "myTurn.html{,/**}",
+        "destination": "/myTurn",
+        "type": 301
+      },
+      {
+        "source": "projects.html{,/**}",
+        "destination": "/projects",
+        "type": 301
+      },
+      {
+        "source": "resources.html{,/**}",
+        "destination": "/resources",
+        "type": 301
+      },
+      {
+        "source": "signin.html{,/**}",
+        "destination": "/signin",
+        "type": 301
+      },
+      {
+        "source": "signup.html{,/**}",
+        "destination": "/signup",
+        "type": 301
+      },
+      {
+        "source": "squad.html{,/**}",
+        "destination": "/squad",
+        "type": 301
+      }
     ]
   }
 }

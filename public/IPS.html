@@ -14,12 +14,12 @@
     <div id="page">
       <div id="header">
         <div>
-          <a href="index1.html" class="logo"
+          <a href="home_index.html" class="logo"
             ><img src="images/tentative.png" alt=""
           /></a>
           <ul id="navigation">
             <li class="selected">
-              <a href="index1.html">Home</a>
+              <a href="home_index.html">Home</a>
             </li>
             <li>
               <a href="about.html">About</a>
@@ -28,8 +28,8 @@
               <a href="projects.html">Projects</a>
               <ul class="primary">
                 <li>
-                  <a href="IPS1.html" style="font-size: 12px">IPS1 1</a>
-                  <a href="IPS2.html" style="font-size: 12px">IPS1 2</a>
+                  <a href="APS.html" style="font-size: 12px">APS</a>
+                  <a href="IPS.html" style="font-size: 12px">IPS</a>
                   <a href="myTurn.html" style="font-size: 12px">My Turn</a>
                 </li>
               </ul>
@@ -72,10 +72,12 @@
       <div id="body">
         <div class="header">
           <div>
-            <h1>Intelligent Parking System II</h1>
-            <img src="images/moon-landing.jpg" alt="" />
-            <h2>Outline</h2>
-            <p>
+            <h1>Intelligent Parking System</h1>
+            <img src="images/ipsPage.png" alt="" />
+            <!-- <h2>Outline</h2> -->
+            <h2 id="countdown">Coming Soon</h2>
+
+            <!-- <p>
               #Edwin: To add content #Edwin: To add content #Edwin: To add
               content #Edwin: To add content #Edwin: To add content #Edwin: To
               add content #Edwin: To add content #Edwin: To add content #Edwin:
@@ -92,31 +94,11 @@
               #Edwin: To add content #Edwin: To add content #Edwin: To add
               content #Edwin: To add content #Edwin: To add content #Edwin: To
               add content #Edwin: To add content #Edwin: To add content
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
       <div id="footer">
-        <!-- <div class="connect">
-          <div>
-            <h1>FOLLOW OUR mission ON</h1>
-            <div>
-              <a
-                href="http://Must_change_ _update.com/go/facebook/"
-                class="facebook"
-                >facebook</a
-              >
-              <a
-                href="http://Must_change_ _update.com/go/twitter/"
-                class="twitter"
-                >twitter</a
-              >
-              <a href="http://pinterest.com/fwtemplates/" class="pinterest"
-                >pinterest</a
-              >
-            </div>
-          </div>
-        </div> -->
         <div class="footnote">
           <div>
             <p>&copy; ARM-Y | 2023</p>
@@ -124,5 +106,33 @@
         </div>
       </div>
     </div>
+    <script>
+      // Set the target date 6 months from the current date
+      const targetDate = new Date();
+      targetDate.setMonth(targetDate.getMonth() + 6);
+
+      function updateCountdown() {
+        const now = new Date();
+        const timeLeft = targetDate - now;
+
+        // Calculate remaining time in days, hours, minutes, and seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Update the countdown text
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = `Coming Soon: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds to go`;
+
+        // Update the countdown every second
+        setTimeout(updateCountdown, 1000);
+      }
+
+      // Start updating the countdown
+      updateCountdown();
+    </script>
   </body>
 </html>
